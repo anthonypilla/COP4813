@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>COP4813 Hello World</title>
+    </head>
+      <body>
+      
+        <header>
+        <h1>Hello World!</h1>
+        </header>
+
+        <main>
+          <p>This webpage is for COP4813.</p>
+
+          <a href="about.html">About This Page</a>
+        </main>
+
+        <footer>
+          <p>Created by Anthony Pilla</p>
+        </footer>
+
+      </body>
+      
+<html>
