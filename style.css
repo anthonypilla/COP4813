@@ -1,7 +1,7 @@
 body {
 font-family: Arial, sans-serif;
 margin: 0;
-background-color: #f4f4f4;
+background-color: #f4f7fa;
 color: #333;
 line-height: 1.6;
 }
@@ -10,7 +10,7 @@ line-height: 1.6;
 
 header {
 background-color: #2496FF;
-color: #333;
+color: white;
 text-align: center;
 padding: 30px 20px;
 }
@@ -57,6 +57,7 @@ border-radius: 8px;
 
 section h2 {
 margin-top: 0;
+color: #2496FF;
 }
 
 /* Welcome Section */
@@ -91,11 +92,11 @@ flex: 1;
 /* Links */
 
 a {
-color: #333;
+color: #2496FF;
 }
 
 a:hover {
-color: #666;
+color: #1478d4;
 }
 
 /* Lists */
@@ -111,7 +112,7 @@ margin: 8px 0;
 /* Footer */
 
 footer {
-background-color: #333;
+background-color: #2496FF;
 color: white;
 text-align: center;
 padding: 20px;
