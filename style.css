@@ -2,7 +2,7 @@ body {
 font-family: Arial, sans-serif;
 margin: 0;
 background-color: #f4f4f4;
-color: #333;
+color: #26C5FF;
 line-height: 1.6;
 }
 
@@ -91,7 +91,7 @@ flex: 1;
 
 
 a {
-color: #333;
+color: #26C5FF;
 }
 
 a:hover {
