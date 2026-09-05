@@ -6,7 +6,7 @@ color: #333;
 line-height: 1.6;
 }
 
-
+/* Header and Navigation */
 
 header {
 background-color: #333;
@@ -40,7 +40,7 @@ nav a:hover {
 text-decoration: underline;
 }
 
-
+/* Main Content */
 
 main {
 max-width: 900px;
@@ -59,13 +59,13 @@ section h2 {
 margin-top: 0;
 }
 
-
+/* Welcome Section */
 
 .welcome {
 text-align: center;
 }
 
-
+/* Profile Section */
 
 .profile {
 display: flex;
@@ -88,7 +88,7 @@ border-radius: 8px;
 flex: 1;
 }
 
-
+/* Links */
 
 a {
 color: #333;
@@ -98,7 +98,7 @@ a:hover {
 color: #666;
 }
 
-
+/* Lists */
 
 ul {
 padding-left: 20px;
@@ -108,7 +108,7 @@ li {
 margin: 8px 0;
 }
 
-
+/* Footer */
 
 footer {
 background-color: #333;
