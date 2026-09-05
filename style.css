@@ -1,17 +1,119 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+font-family: Arial, sans-serif;
+margin: 0;
+background-color: #f4f4f4;
+color: #333;
+line-height: 1.6;
+}
+
+
+
+header {
+background-color: #333;
+color: white;
+text-align: center;
+padding: 30px 20px;
+}
+
+header h1 {
+margin: 0;
+font-size: 36px;
+}
+
+.subtitle {
+margin: 5px 0 20px;
+font-size: 18px;
+}
+
+nav {
+margin-top: 20px;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 15px;
+font-weight: bold;
+}
+
+nav a:hover {
+text-decoration: underline;
+}
+
+
+
+main {
+max-width: 900px;
+margin: 30px auto;
+padding: 0 20px;
+}
+
+section {
+background-color: white;
+margin-bottom: 25px;
+padding: 25px;
+border-radius: 8px;
+}
+
+section h2 {
+margin-top: 0;
+}
+
+
+
+.welcome {
+text-align: center;
+}
+
+
+
+.profile {
+display: flex;
+align-items: center;
+gap: 30px;
 }
 
 .image-container {
-    margin: 30px 0;
+flex: 1;
+text-align: center;
 }
 
 .image-container img {
-    width: 400px;
-    max-width: 100%;
+width: 300px;
+max-width: 100%;
+border-radius: 8px;
 }
 
+.about {
+flex: 1;
+}
+
+
+
+a {
+color: #333;
+}
+
+a:hover {
+color: #666;
+}
+
+
+
+ul {
+padding-left: 20px;
+}
+
+li {
+margin: 8px 0;
+}
+
+
+
 footer {
-    margin-top: 40px;
+background-color: #333;
+color: white;
+text-align: center;
+padding: 20px;
+margin-top: 40px;
 }
