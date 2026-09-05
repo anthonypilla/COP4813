@@ -121,33 +121,32 @@ margin-top: 40px;
 
 /* Assignments */
 
-.assignments {
-text-align: center;
+main > h2 {
+margin-bottom: 25px;
+color: #2496FF;
 }
 
-.assignment-list {
-max-width: 600px;
-margin: 0 auto;
+.assignment {
+text-align: left;
+margin-bottom: 25px;
 }
 
-.assignment-link {
-display: block;
+.assignment h3 {
+margin-top: 0;
+color: #2496FF;
+}
+
+.assignment-button {
+display: inline-block;
 background-color: #2496FF;
 color: white;
 text-decoration: none;
-padding: 15px;
-margin: 15px 0;
+padding: 10px 18px;
+margin-top: 10px;
 border-radius: 6px;
 font-weight: bold;
 }
 
-.assignment-link:hover {
+.assignment-button:hover {
 background-color: #1478d4;
 }
-
-.assignment-link.upcoming {
-background-color: #d9e0e7;
-color: #555;
-cursor: default;
-}
-
