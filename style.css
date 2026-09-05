@@ -118,3 +118,36 @@ text-align: center;
 padding: 20px;
 margin-top: 40px;
 }
+
+/* Assignments */
+
+.assignments {
+text-align: center;
+}
+
+.assignment-list {
+max-width: 600px;
+margin: 0 auto;
+}
+
+.assignment-link {
+display: block;
+background-color: #2496FF;
+color: white;
+text-decoration: none;
+padding: 15px;
+margin: 15px 0;
+border-radius: 6px;
+font-weight: bold;
+}
+
+.assignment-link:hover {
+background-color: #1478d4;
+}
+
+.assignment-link.upcoming {
+background-color: #d9e0e7;
+color: #555;
+cursor: default;
+}
+
