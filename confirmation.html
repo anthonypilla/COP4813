@@ -1,1 +1,161 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Confirmation page for Assignment 3 in COP4813.">
+    <meta name="author" content="Anthony Pilla">
+
+    <title>Confirm Information - COP4813</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Anthony Pilla</h1>
+        <p class="subtitle">COP4813 - Web Programming</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="assignments.html">My Assignments</a>
+            <a href="index.html#resources">Resources</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="assignment-page">
+
+            <h2>Confirm Your Information</h2>
+
+            <p>
+                Please review the information below and make sure everything
+                is correct.
+            </p>
+
+            <div class="confirmation-info">
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="displayName"></span>
+                </p>
+
+                <p>
+                    <strong>Address:</strong>
+                    <span id="displayAddress"></span>
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    <span id="displayPhone"></span>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <span id="displayEmail"></span>
+                </p>
+
+                <p>
+                    <strong>Birth Date:</strong>
+                    <span id="displayBirthdate"></span>
+                </p>
+
+                <p>
+                    <strong>Message:</strong>
+                    <span id="displayMessage"></span>
+                </p>
+
+            </div>
+
+
+            <div class="confirmation-buttons">
+
+                <button type="button" onclick="confirmInformation()">
+                    Confirm Information
+                </button>
+
+                <button type="button" onclick="goBack()">
+                    Go Back
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Created by Anthony Pilla | COP4813</p>
+    </footer>
+
+
+    <script>
+
+        const savedData = sessionStorage.getItem("assignment3Data");
+
+        if (savedData) {
+
+            const data = JSON.parse(savedData);
+
+            document.getElementById("displayName").textContent =
+                data.firstName + " " + data.lastName;
+
+            document.getElementById("displayAddress").textContent =
+                data.address + ", " +
+                data.city + ", " +
+                data.state + " " +
+                data.zip;
+
+            document.getElementById("displayPhone").textContent =
+                data.phone;
+
+            document.getElementById("displayEmail").textContent =
+                data.email;
+
+            document.getElementById("displayBirthdate").textContent =
+                data.birthdate;
+
+            document.getElementById("displayMessage").textContent =
+                data.message;
+
+        } else {
+
+            document.querySelector("main").innerHTML =
+                "<section class='assignment-page'>" +
+                "<h2>No Information Found</h2>" +
+                "<p>Please return to the form and enter your information.</p>" +
+                "<a href='assignment3.html' class='assignment-button'>" +
+                "Return to Form" +
+                "</a>" +
+                "</section>";
+
+        }
+
+
+        function goBack() {
+            window.location.href = "assignment3.html";
+        }
+
+
+        function confirmInformation() {
+
+            alert("Your information has been confirmed.");
+
+            sessionStorage.removeItem("assignment3Data");
+
+            window.location.href = "index.html";
+        }
+
+    </script>
+
+</body>
+</html>
+
+
