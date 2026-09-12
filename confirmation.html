@@ -147,10 +147,30 @@
     }
 
 
-    function confirmInformation() {
-        alert("Your information has been confirmed.");
-        window.location.href = "index.html";
-    }
+    
+function confirmInformation() {
+
+    const email = params.get("email");
+
+    const subject = "COP4813 Assignment 3 Form Submission";
+
+    const body =
+        "Name: " + firstName + " " + lastName + "\n" +
+        "Address: " + address + ", " + city + ", " + state + " " + zip + "\n" +
+        "Phone: " + phone + "\n" +
+        "Email: " + email + "\n" +
+        "Birth Date: " + birthdate + "\n\n" +
+        "Message:\n" + message;
+
+    const mailtoLink =
+        "mailto:" + email +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+    window.location.href = mailtoLink;
+}
+
+
 
 </script>
 
