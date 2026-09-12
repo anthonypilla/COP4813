@@ -1,4 +1,4 @@
-javascript
+
 const form = document.getElementById("contactForm");
 
 const phoneInput = document.getElementById("phone");
