@@ -98,62 +98,61 @@
 
     <script>
 
-        const savedData = sessionStorage.getItem("assignment3Data");
+    const params = new URLSearchParams(window.location.search);
 
-        if (savedData) {
-
-            const data = JSON.parse(savedData);
-
-            document.getElementById("displayName").textContent =
-                data.firstName + " " + data.lastName;
-
-            document.getElementById("displayAddress").textContent =
-                data.address + ", " +
-                data.city + ", " +
-                data.state + " " +
-                data.zip;
-
-            document.getElementById("displayPhone").textContent =
-                data.phone;
-
-            document.getElementById("displayEmail").textContent =
-                data.email;
-
-            document.getElementById("displayBirthdate").textContent =
-                data.birthdate;
-
-            document.getElementById("displayMessage").textContent =
-                data.message;
-
-        } else {
-
-            document.querySelector("main").innerHTML =
-                "<section class='assignment-page'>" +
-                "<h2>No Information Found</h2>" +
-                "<p>Please return to the form and enter your information.</p>" +
-                "<a href='assignment3.html' class='assignment-button'>" +
-                "Return to Form" +
-                "</a>" +
-                "</section>";
-
-        }
+    const firstName = params.get("firstName");
+    const lastName = params.get("lastName");
+    const address = params.get("address");
+    const city = params.get("city");
+    const state = params.get("state");
+    const zip = params.get("zip");
+    const phone = params.get("phone");
+    const email = params.get("email");
+    const birthdate = params.get("birthdate");
+    const message = params.get("message");
 
 
-        function goBack() {
-            window.location.href = "assignment3.html";
-        }
+    if (firstName && lastName) {
+
+        document.getElementById("displayName").textContent =
+            firstName + " " + lastName;
+
+        document.getElementById("displayAddress").textContent =
+            address + ", " + city + ", " + state + " " + zip;
+
+        document.getElementById("displayPhone").textContent = phone;
+
+        document.getElementById("displayEmail").textContent = email;
+
+        document.getElementById("displayBirthdate").textContent =
+            birthdate;
+
+        document.getElementById("displayMessage").textContent =
+            message;
+
+    } else {
+
+        document.querySelector("main").innerHTML =
+            "<section class='assignment-page'>" +
+            "<h2>No Information Found</h2>" +
+            "<p>Please return to the form and enter your information.</p>" +
+            "<a href='assignment3.html' class='assignment-button'>" +
+            "Return to Form</a>" +
+            "</section>";
+    }
 
 
-        function confirmInformation() {
+    function goBack() {
+        window.history.back();
+    }
 
-            alert("Your information has been confirmed.");
 
-            sessionStorage.removeItem("assignment3Data");
+    function confirmInformation() {
+        alert("Your information has been confirmed.");
+        window.location.href = "index.html";
+    }
 
-            window.location.href = "index.html";
-        }
-
-    </script>
+</script>
 
 </body>
 </html>
