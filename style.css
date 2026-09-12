@@ -159,21 +159,31 @@ form {
     margin: 0 auto;
 }
 
-form h3 {
-    color: #2496FF;
-    margin-top: 25px;
+.form-section {
+    background-color: #eaf4ff;
+    border: 1px solid #b8d9f7;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-section h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 .form-group {
-    background-color: #2496FF;
-    padding: 15px;
-    margin-bottom: 12px;
-    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
 }
 
 .form-group label {
     display: block;
-    color: white;
+    color: #333;
     font-weight: bold;
     margin-bottom: 6px;
 }
@@ -183,8 +193,10 @@ form h3 {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
-    border: none;
+    border: 1px solid #9fc7e8;
     border-radius: 4px;
+    background-color: white;
+    color: #333;
     font-family: Arial, sans-serif;
     font-size: 16px;
 }
@@ -202,9 +214,9 @@ form button {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 15px;
 }
 
 form button:hover {
     background-color: #1478d4;
 }
+
