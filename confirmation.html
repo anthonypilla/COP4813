@@ -150,8 +150,6 @@
     
 function confirmInformation() {
 
-    const email = params.get("email");
-
     const subject = "COP4813 Assignment 3 Form Submission";
 
     const body =
@@ -163,7 +161,7 @@ function confirmInformation() {
         "Message:\n" + message;
 
     const mailtoLink =
-        "mailto:" + email +
+        "mailto:anthony_pilla@daytonastate.edu" +
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(body);
 
