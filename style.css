@@ -1,154 +1,185 @@
+/* General Page Style */
+
 body {
-font-family: Arial, sans-serif;
-margin: 0;
-background-color: #f4f7fa;
-color: #333;
-line-height: 1.6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f7fa;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Header and Navigation */
+
+/* Header */
 
 header {
-background-color: #2496FF;
-color: white;
-text-align: center;
-padding: 30px 20px;
+    background-color: #2496FF;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 header h1 {
-margin: 0;
-font-size: 36px;
+    margin: 0;
+    font-size: 36px;
 }
 
 .subtitle {
-margin: 5px 0 20px;
-font-size: 18px;
+    margin: 5px 0 20px;
+    font-size: 18px;
 }
 
+
+/* Navigation */
+
 nav {
-margin-top: 20px;
+    margin-top: 20px;
 }
 
 nav a {
-color: white;
-text-decoration: none;
-margin: 0 15px;
-font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: opacity 0.2s;
 }
 
 nav a:hover {
-text-decoration: underline;
+    text-decoration: underline;
+    opacity: 0.85;
 }
+
 
 /* Main Content */
 
 main {
-max-width: 900px;
-margin: 30px auto;
-padding: 0 20px;
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 0 20px;
 }
 
+
+/* General Sections */
+
 section {
-background-color: white;
-margin-bottom: 25px;
-padding: 25px;
-border-radius: 8px;
+    background-color: white;
+    margin-bottom: 25px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 section h2 {
-margin-top: 0;
-color: #2496FF;
+    margin-top: 0;
+    color: #2496FF;
 }
 
-/* Welcome Section */
+
+/* Homepage */
 
 .welcome {
-text-align: center;
+    text-align: center;
 }
 
-/* Profile Section */
-
 .profile {
-display: flex;
-align-items: center;
-gap: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
 .image-container {
-flex: 1;
-text-align: center;
+    flex: 1;
+    text-align: center;
 }
 
 .image-container img {
-width: 300px;
-max-width: 100%;
-border-radius: 8px;
+    width: 300px;
+    max-width: 100%;
+    border-radius: 8px;
 }
 
 .about {
-flex: 1;
+    flex: 1;
 }
+
 
 /* Links */
 
 a {
-color: #2496FF;
+    color: #2496FF;
 }
 
 a:hover {
-color: #1478d4;
+    color: #1478d4;
 }
+
 
 /* Lists */
 
 ul {
-padding-left: 20px;
+    padding-left: 20px;
 }
 
 li {
-margin: 8px 0;
+    margin: 8px 0;
 }
 
-/* Footer */
 
-footer {
-background-color: #2496FF;
-color: white;
-text-align: center;
-padding: 20px;
-margin-top: 40px;
-}
-
-/* Assignments */
-
-main > h2 {
-margin-bottom: 25px;
-color: #2496FF;
-}
+/* Assignment List */
 
 .assignment {
-text-align: left;
-margin-bottom: 25px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.assignment:last-child {
+    margin-bottom: 0;
 }
 
 .assignment h3 {
-margin-top: 0;
-color: #2496FF;
+    margin-top: 0;
+    color: #2496FF;
 }
 
+.assignment p {
+    margin-bottom: 10px;
+}
+
+
+/* Assignment Buttons */
+
 .assignment-button {
-display: inline-block;
-background-color: #2496FF;
-color: white;
-text-decoration: none;
-padding: 10px 18px;
-margin-top: 10px;
-border-radius: 6px;
-font-weight: bold;
+    display: inline-block;
+    background-color: #2496FF;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    margin-top: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .assignment-button:hover {
-background-color: #1478d4;
+    background-color: #1478d4;
+    color: white;
+    transform: translateY(-1px);
+}
+
+
+/* Assignment Pages */
+
+.assignment-page {
+    text-align: left;
+}
+
+.assignment-page h2 {
+    color: #2496FF;
+}
+
+.assignment-page .image-container {
+    text-align: center;
+    margin-top: 30px;
 }
 
 
@@ -192,18 +223,28 @@ form {
 .form-group textarea {
     width: 100%;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 11px;
     border: 1px solid #9fc7e8;
-    border-radius: 4px;
+    border-radius: 5px;
     background-color: white;
     color: #333;
     font-family: Arial, sans-serif;
     font-size: 16px;
 }
 
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2496FF;
+    box-shadow: 0 0 0 2px rgba(36, 150, 255, 0.15);
+}
+
 .form-group textarea {
     resize: vertical;
 }
+
+
+/* Form Submit Button */
 
 form button {
     background-color: #2496FF;
@@ -214,14 +255,16 @@ form button {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 form button:hover {
     background-color: #1478d4;
+    transform: translateY(-1px);
 }
 
 
-/* Assignment 3 Confirmation */
+/* Confirmation Page */
 
 .confirmation-info {
     background-color: #eaf4ff;
@@ -250,9 +293,87 @@ form button:hover {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .confirmation-buttons button:hover {
     background-color: #1478d4;
+    transform: translateY(-1px);
 }
 
+
+/* Footer */
+
+footer {
+    background-color: #2496FF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* Mobile-Friendly Design */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 0 15px;
+        margin: 25px auto;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .profile {
+        flex-direction: column;
+    }
+
+    .image-container img {
+        width: 250px;
+    }
+
+    .assignment-button {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .confirmation-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .confirmation-buttons button {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    form button {
+        width: 100%;
+    }
+}
+```
