@@ -43,26 +43,18 @@ form.addEventListener("submit", function (event) {
     const security = document.getElementById("security").value.trim();
 
 
-    // Check that required fields are not blank
+    // Check required fields
     if (
-        !firstName ||
-        !lastName ||
-        !address ||
-        !city ||
-        !state ||
-        !zip ||
-        !phone ||
-        !email ||
-        !birthdate ||
-        !message ||
-        !security
+        !firstName || !lastName || !address || !city ||
+        !state || !zip || !phone || !email ||
+        !birthdate || !message || !security
     ) {
         alert("Please complete all fields.");
         return;
     }
 
 
-    // Check first and last name
+    // Check names
     if (!/^[A-Za-z'-]+$/.test(firstName)) {
         alert("Please enter a valid first name.");
         return;
@@ -100,18 +92,11 @@ form.addEventListener("submit", function (event) {
 
 
     // Check birth date
-    const selectedDate = new Date(birthdate);
+    const selectedDate = new Date(birthdate + "T00:00:00");
     const today = new Date();
 
     if (selectedDate > today) {
         alert("Birth date cannot be in the future.");
-        return;
-    }
-
-    const earliestDate = new Date("1900-01-01");
-
-    if (selectedDate < earliestDate) {
-        alert("Please enter a reasonable birth date.");
         return;
     }
 
@@ -123,24 +108,20 @@ form.addEventListener("submit", function (event) {
     }
 
 
-    // Save the form information temporarily
-    const formData = {
-        firstName: firstName,
-        lastName: lastName,
-        address: address,
-        city: city,
-        state: state,
-        zip: zip,
-        phone: phone,
-        email: email,
-        birthdate: birthdate,
-        message: message
-    };
+    // Send information to confirmation page
+    const params = new URLSearchParams();
 
-    sessionStorage.setItem("assignment3Data", JSON.stringify(formData));
+    params.set("firstName", firstName);
+    params.set("lastName", lastName);
+    params.set("address", address);
+    params.set("city", city);
+    params.set("state", state);
+    params.set("zip", zip);
+    params.set("phone", phone);
+    params.set("email", email);
+    params.set("birthdate", birthdate);
+    params.set("message", message);
 
 
-    // Go to confirmation page
-    window.location.href = "confirmation.html";
+    window.location.href = "confirmation.html?" + params.toString();
 });
-
