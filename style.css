@@ -220,3 +220,39 @@ form button:hover {
     background-color: #1478d4;
 }
 
+
+/* Assignment 3 Confirmation */
+
+.confirmation-info {
+    background-color: #eaf4ff;
+    border: 1px solid #b8d9f7;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.confirmation-info p {
+    margin: 12px 0;
+    color: #333;
+}
+
+.confirmation-buttons {
+    margin-top: 25px;
+}
+
+.confirmation-buttons button {
+    background-color: #2496FF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-right: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.confirmation-buttons button:hover {
+    background-color: #1478d4;
+}
+
