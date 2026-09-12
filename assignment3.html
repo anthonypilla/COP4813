@@ -33,21 +33,25 @@
 
             <h2>Assignment 3 - Contact Form</h2>
 
-            <form id="contactForm" action="confirmation.html" method="get">
+          
+<form id="contactForm" action="confirmation.html" method="get">
 
-
+    <div class="form-section">
         <h3>Name</h3>
 
         <div class="form-group">
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" name="firstName" required>
-    </div>
+        </div>
 
         <div class="form-group">
             <label for="lastName">Last Name:</label>
             <input type="text" id="lastName" name="lastName" required>
         </div>
+    </div>
 
+
+    <div class="form-section">
         <h3>Address</h3>
 
         <div class="form-group">
@@ -69,55 +73,69 @@
             <label for="zip">ZIP Code:</label>
             <input type="text" id="zip" name="zip" required>
         </div>
+    </div>
 
-    <h3>Contact Information</h3>
+
+    <div class="form-section">
+        <h3>Contact Information</h3>
 
         <div class="form-group">
-        <label for="phone">Phone Number:</label>
-        <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="(000) 000-0000"
-            required
-        >
-    </div>
+            <label for="phone">Phone Number:</label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="(000) 000-0000"
+                required
+            >
+        </div>
 
         <div class="form-group">
             <label for="email">Email Address:</label>
             <input type="email" id="email" name="email" required>
         </div>
+    </div>
 
-    <h3>Birth Date</h3>
+
+    <div class="form-section">
+        <h3>Birth Date</h3>
 
         <div class="form-group">
             <label for="birthdate">Birth Date:</label>
             <input type="date" id="birthdate" name="birthdate" required>
         </div>
+    </div>
 
-    <h3>Message</h3>
+
+    <div class="form-section">
+        <h3>Message</h3>
 
         <div class="form-group">
             <label for="message">Message:</label>
             <textarea
-            id="message"
-            name="message"
-            rows="6"
-            required
+                id="message"
+                name="message"
+                rows="6"
+                required
             ></textarea>
         </div>
+    </div>
 
-    <h3>Confirmation</h3>
+
+    <div class="form-section">
+        <h3>Confirmation</h3>
 
         <div class="form-group">
             <label for="security">What is 5 + 3?</label>
             <input type="text" id="security" name="security" required>
         </div>
+    </div>
+
 
     <button type="submit">Submit</button>
 
-
 </form>
+
 
 
         </section>
