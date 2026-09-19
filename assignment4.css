@@ -1,1 +1,280 @@
 
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* Header */
+
+header {
+    background-color: #2496FF;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.subtitle {
+    margin: 5px 0 20px;
+    font-size: 18px;
+}
+
+
+/* Navigation */
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* Main Content */
+
+main {
+    max-width: 950px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+
+/* Main Assignment Section */
+
+.assignment-page {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.assignment-page h2 {
+    margin-top: 0;
+    color: #2496FF;
+}
+
+
+/* Equation */
+
+.equation-box {
+    background-color: #eaf4ff;
+    border: 1px solid #b8d9f7;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+.equation-box h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.equation {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+
+/* Calculator */
+
+.calculator-box {
+    background-color: #eaf4ff;
+    border: 1px solid #b8d9f7;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.calculator-box h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+
+/* Input Fields */
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px;
+    border: 1px solid #9fc7e8;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #2496FF;
+    box-shadow: 0 0 0 2px rgba(36, 150, 255, 0.15);
+}
+
+
+/* Calculate Button */
+
+.calculator-box button {
+    background-color: #2496FF;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.calculator-box button:hover {
+    background-color: #1478d4;
+}
+
+
+/* Error Message */
+
+.error-message {
+    display: none;
+    background-color: #ffeaea;
+    border: 1px solid #e0a0a0;
+    color: #a00000;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+/* Results */
+
+.results-box {
+    display: none;
+    background-color: white;
+    border: 1px solid #d5dce3;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.results-box h3 {
+    color: #2496FF;
+    margin-top: 0;
+}
+
+.results-box p {
+    margin: 10px 0;
+}
+
+
+/* Plot */
+
+.plot-box {
+    background-color: white;
+    border: 1px solid #d5dce3;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.plot-box h3 {
+    color: #2496FF;
+    margin-top: 0;
+    text-align: center;
+}
+
+#gravityPlot {
+    width: 100%;
+    min-height: 500px;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #2496FF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* Mobile Design */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 0 15px;
+        margin: 25px auto;
+    }
+
+    .assignment-page {
+        padding: 20px;
+    }
+
+    .equation {
+        font-size: 20px;
+    }
+
+    .calculator-box {
+        padding: 20px;
+    }
+
+    .calculator-box button {
+        width: 100%;
+    }
+
+    #gravityPlot {
+        min-height: 400px;
+    }
+}
+
