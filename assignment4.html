@@ -1,1 +1,196 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Assignment 4 for COP4813 featuring a JavaScript gravitational force calculator and interactive plot.">
+    <meta name="author" content="Anthony Pilla">
+
+    <title>Assignment 4 - Gravitational Force Calculator</title>
+
+    <link rel="stylesheet" href="assignment4.css">
+
+   
+    <script src="https://cdn.plot.ly/plotly-4.0.0.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Anthony Pilla</h1>
+        <p class="subtitle">COP4813 - Web Programming</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="assignments.html">My Assignments</a>
+            <a href="index.html#resources">Resources</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="assignment-page">
+
+            <h2>Assignment 4 - Gravitational Force Calculator</h2>
+
+            <p>
+                This calculator uses Newton's Law of Universal Gravitation
+                to calculate the gravitational force between two objects.
+                The results are also displayed on an interactive graph.
+            </p>
+
+            <div class="equation-box">
+                <h3>Newton's Law of Universal Gravitation</h3>
+
+                <p class="equation">
+                    F = G × (m₁ × m₂) / r²
+                </p>
+
+                <p>
+                    <strong>F</strong> = gravitational force in Newtons<br>
+                    <strong>G</strong> = gravitational constant<br>
+                    <strong>m₁</strong> = mass of object 1 in kilograms<br>
+                    <strong>m₂</strong> = mass of object 2 in kilograms<br>
+                    <strong>r</strong> = distance between the objects in meters
+                </p>
+
+                <p>
+                    The gravitational constant is
+                    <strong>G = 6.67430 × 10⁻¹¹</strong>.
+                </p>
+            </div>
+
+
+            <div class="calculator-box">
+
+                <h3>Calculator</h3>
+
+                <form id="gravityForm">
+
+                    <div class="input-group">
+                        <label for="mass1">Mass of Object 1 (kg):</label>
+
+                        <input
+                            type="number"
+                            id="mass1"
+                            value="1000"
+                            min="0.000001"
+                            step="any"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="mass2">Mass of Object 2 (kg):</label>
+
+                        <input
+                            type="number"
+                            id="mass2"
+                            value="5000"
+                            min="0.000001"
+                            step="any"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="startDistance">Starting Distance (m):</label>
+
+                        <input
+                            type="number"
+                            id="startDistance"
+                            value="1"
+                            min="0.000001"
+                            step="any"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="endDistance">Ending Distance (m):</label>
+
+                        <input
+                            type="number"
+                            id="endDistance"
+                            value="100"
+                            min="0.000002"
+                            step="any"
+                            required
+                        >
+                    </div>
+
+
+                    <button type="submit">
+                        Calculate
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <div id="errorMessage" class="error-message"></div>
+
+
+            <div id="results" class="results-box">
+
+                <h3>Calculated Results</h3>
+
+                <p>
+                    <strong>Mass of Object 1:</strong>
+                    <span id="resultMass1"></span>
+                </p>
+
+                <p>
+                    <strong>Mass of Object 2:</strong>
+                    <span id="resultMass2"></span>
+                </p>
+
+                <p>
+                    <strong>Starting Distance:</strong>
+                    <span id="resultStart"></span>
+                </p>
+
+                <p>
+                    <strong>Ending Distance:</strong>
+                    <span id="resultEnd"></span>
+                </p>
+
+                <p>
+                    <strong>Force at Starting Distance:</strong>
+                    <span id="resultForce"></span>
+                </p>
+
+            </div>
+
+
+            <div class="plot-box">
+
+                <h3>Gravitational Force vs. Distance</h3>
+
+                <div id="gravityPlot"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Created by Anthony Pilla | COP4813</p>
+    </footer>
+
+
+    <script src="assignment4.js"></script>
+
+</body>
+</html>
+
