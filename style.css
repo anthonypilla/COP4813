@@ -374,6 +374,35 @@ footer p {
 
     form button {
         width: 100%;
+    } 
+    
+    
+    .canvas-container {
+    text-align: center;
+    margin: 30px 0;
     }
-}
-```
+    
+    #spirographCanvas {
+    max-width: 100%;
+    height: auto;
+    background-color: white;
+    border: 1px solid #b8d9f7;
+    border-radius: 8px;
+    }
+    
+    #startButton {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #2496FF;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    }
+    
+    #startButton {
+    background-color: #1478d4;
+    }
