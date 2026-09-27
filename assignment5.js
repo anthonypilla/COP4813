@@ -4,8 +4,8 @@ const ctx = canvas.getContext("2d");
 const startButton = document.getElementById("startButton");
 
 
-
 startButton.addEventListener("click", function () {
+
 
 
 
@@ -28,10 +28,11 @@ const centerY = canvas.height / 2;
 
 
 
+
 let t = 0;
 
 
-  
+
 const tIncrement = 0.01;
 
 
@@ -56,13 +57,13 @@ for (let i = 0; i < 20000; i++) {
         (r + O) * Math.sin(((R + r) / r) * t);
 
 
-   
+    
 
     const canvasX = centerX + x;
     const canvasY = centerY - y;
 
 
-   
+    
 
     if (firstPoint) {
 
@@ -77,6 +78,7 @@ for (let i = 0; i < 20000; i++) {
     }
 
 
+ 
 
     t += tIncrement;
 
@@ -101,4 +103,3 @@ return Math.floor(
 
 
 }
-
