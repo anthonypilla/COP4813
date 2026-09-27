@@ -46,7 +46,7 @@ const tIncrement = 0.01;
 
 // Number of points drawn per animation frame
 
-const pointsPerFrame = 20;
+const pointsPerFrame = 100;
 
 
 // Begin drawing
