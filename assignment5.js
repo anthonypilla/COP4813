@@ -3,8 +3,18 @@ const ctx = canvas.getContext("2d");
 
 const startButton = document.getElementById("startButton");
 
+let animationId = null;
+
+
 
 startButton.addEventListener("click", function () {
+
+
+
+
+if (animationId !== null) {
+    cancelAnimationFrame(animationId);
+}
 
 
 
@@ -15,9 +25,7 @@ ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
 const R = randomNumber(100, 250);
-
 const r = randomNumber(20, R - 20);
-
 const O = randomNumber(0, r);
 
 
@@ -38,56 +46,83 @@ const tIncrement = 0.01;
 
 
 
-ctx.beginPath();
+const pointsPerFrame = 20;
 
+
+
+
+ctx.beginPath();
 
 let firstPoint = true;
 
 
-for (let i = 0; i < 20000; i++) {
+function draw() {
 
-    
+   
 
-    const x =
-        (R + r) * Math.cos(t) -
-        (r + O) * Math.cos(((R + r) / r) * t);
+    for (let i = 0; i < pointsPerFrame; i++) {
 
-    const y =
-        (R + r) * Math.sin(t) -
-        (r + O) * Math.sin(((R + r) / r) * t);
+        
 
+        const x =
+            (R + r) * Math.cos(t) -
+            (r + O) * Math.cos(((R + r) / r) * t);
 
-    
-
-    const canvasX = centerX + x;
-    const canvasY = centerY - y;
+        const y =
+            (R + r) * Math.sin(t) -
+            (r + O) * Math.sin(((R + r) / r) * t);
 
 
-    
+       
+        const canvasX = centerX + x;
+        const canvasY = centerY - y;
 
-    if (firstPoint) {
 
-        ctx.moveTo(canvasX, canvasY);
+       
 
-        firstPoint = false;
+        if (firstPoint) {
 
-    } else {
+            ctx.moveTo(canvasX, canvasY);
 
-        ctx.lineTo(canvasX, canvasY);
+            firstPoint = false;
+
+        } else {
+
+            ctx.lineTo(canvasX, canvasY);
+
+        }
+
+
+        
+
+        t += tIncrement;
 
     }
 
 
- 
+    
 
-    t += tIncrement;
+    ctx.stroke();
+
+
+    
+
+    if (t < Math.PI * 2 * 20) {
+
+        animationId = requestAnimationFrame(draw);
+
+    } else {
+
+        animationId = null;
+
+    }
 
 }
 
 
 
 
-ctx.stroke();
+draw();
 
 
 });
