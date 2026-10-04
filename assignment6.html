@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="2024 MLB wRC+ leaders displayed using JSON and JavaScript for COP4813.">
+    <meta name="author" content="Anthony Pilla">
+
+    <title>Assignment 6 - 2024 MLB wRC+ Leaders</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Anthony Pilla</h1>
+        <p class="subtitle">COP4813 - Web Programming</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="assignments.html">My Assignments</a>
+            <a href="index.html#resources">Resources</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="assignment-page">
+
+            <h2 id="tableTitle">2024 MLB wRC+ Leaders</h2>
+
+            <div class="json-table-container">
+
+                <table class="json-table">
+
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Team</th>
+                            <th>Position</th>
+                            <th>AVG</th>
+                            <th>HR</th>
+                            <th>fWAR</th>
+                            <th>wRC+</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="playerTable">
+                        
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <p id="errorMessage"></p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Created by Anthony Pilla | COP4813</p>
+    </footer>
+
+    <script src="assignment6.js"></script>
+
+</body>
+
+</html>
