@@ -406,3 +406,42 @@ footer p {
     #startButton {
     background-color: #1478d4;
     }
+
+    /* Assignment 6 - JSON Table */
+    
+    .json-table-container {
+        overflow-x: auto;
+        margin-top: 25px;
+    }
+    
+    .json-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+    }
+    
+    .json-table th {
+        background-color: #2496FF;
+        color: white;
+        padding: 12px;
+        text-align: left;
+    }
+    
+    .json-table td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .json-table tr:nth-child(even) {
+        background-color: #f4f7fa;
+    }
+    
+    .json-table tr:hover {
+        background-color: #eaf4ff;
+    }
+    
+    #errorMessage {
+        color: #a00000;
+        font-weight: bold;
+        margin-top: 20px;
+    }
