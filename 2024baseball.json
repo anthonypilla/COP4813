@@ -1,0 +1,105 @@
+{
+    "title": "2024 MLB wRC+ Leaders",
+    "players": [
+        {
+            "rank": 1,
+            "playerName": "Aaron Judge",
+            "team": "New York Yankees",
+            "position": "OF",
+            "battingAverage": 0.322,
+            "homeRuns": 58,
+            "fWAR": 11.2,
+            "wRCPlus": 219
+        },
+        {
+            "rank": 2,
+            "playerName": "Juan Soto",
+            "team": "New York Yankees",
+            "position": "OF",
+            "battingAverage": 0.288,
+            "homeRuns": 41,
+            "fWAR": 8.2,
+            "wRCPlus": 180
+        },
+        {
+            "rank": 3,
+            "playerName": "Shohei Ohtani",
+            "team": "Los Angeles Dodgers",
+            "position": "DH",
+            "battingAverage": 0.310,
+            "homeRuns": 54,
+            "fWAR": 8.9,
+            "wRCPlus": 179
+        },
+        {
+            "rank": 4,
+            "playerName": "Bobby Witt Jr.",
+            "team": "Kansas City Royals",
+            "position": "SS",
+            "battingAverage": 0.332,
+            "homeRuns": 32,
+            "fWAR": 10.5,
+            "wRCPlus": 169
+        },
+        {
+            "rank": 5,
+            "playerName": "Yordan Alvarez",
+            "team": "Houston Astros",
+            "position": "DH",
+            "battingAverage": 0.308,
+            "homeRuns": 35,
+            "fWAR": 5.2,
+            "wRCPlus": 168
+        },
+        {
+            "rank": 6,
+            "playerName": "Vladimir Guerrero Jr.",
+            "team": "Toronto Blue Jays",
+            "position": "1B",
+            "battingAverage": 0.323,
+            "homeRuns": 30,
+            "fWAR": 5.2,
+            "wRCPlus": 164
+        },
+        {
+            "rank": 7,
+            "playerName": "Brent Rooker",
+            "team": "Oakland Athletics",
+            "position": "DH",
+            "battingAverage": 0.293,
+            "homeRuns": 39,
+            "fWAR": 5.1,
+            "wRCPlus": 164
+        },
+        {
+            "rank": 8,
+            "playerName": "Marcell Ozuna",
+            "team": "Atlanta Braves",
+            "position": "DH",
+            "battingAverage": 0.302,
+            "homeRuns": 39,
+            "fWAR": 4.8,
+            "wRCPlus": 155
+        },
+        {
+            "rank": 9,
+            "playerName": "Gunnar Henderson",
+            "team": "Baltimore Orioles",
+            "position": "SS",
+            "battingAverage": 0.281,
+            "homeRuns": 37,
+            "fWAR": 7.9,
+            "wRCPlus": 154
+        },
+        {
+            "rank": 10,
+            "playerName": "Ketel Marte",
+            "team": "Arizona Diamondbacks",
+            "position": "2B",
+            "battingAverage": 0.292,
+            "homeRuns": 36,
+            "fWAR": 6.4,
+            "wRCPlus": 152
+        }
+    ]
+}
