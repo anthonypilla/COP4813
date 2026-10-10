@@ -7,7 +7,7 @@ const errorMessage = document.getElementById("errorMessage");
 let animationId = null;
 
 
-// Calculate the greatest common divisor
+// Greatest common divisor
 
 function gcd(a, b) {
     while (b !== 0) {
@@ -20,19 +20,17 @@ function gcd(a, b) {
 }
 
 
-// Draw the Spirograph when the form is submitted
+// Draw the Spirograph
 
 form.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
-    // Read the user-entered parameters
-
     const R = Number(document.getElementById("outerRadius").value);
     const r = Number(document.getElementById("innerRadius").value);
     const O = Number(document.getElementById("penOffset").value);
 
-    // Validate the parameters
+    // Validate input
 
     if (
         !Number.isFinite(R) ||
@@ -45,50 +43,39 @@ form.addEventListener("submit", function (event) {
         O < 0
     ) {
         errorMessage.textContent =
-            "Enter whole numbers greater than zero for R and r, and a nonnegative value for O.";
-        return;
-    }
-
-    // Ensure the pattern fits inside the canvas
-
-    if (R + 2 * r + O > 330) {
-        errorMessage.textContent =
-            "The pattern may be too large. Reduce the values so R + 2r + O is 330 or less.";
+            "Enter positive whole numbers for R and r, and a nonnegative value for O.";
         return;
     }
 
     errorMessage.textContent = "";
 
-    // Stop any previous animation
+    // Stop previous animation
 
     if (animationId !== null) {
         cancelAnimationFrame(animationId);
         animationId = null;
     }
 
-    // Clear the previous pattern
+    // Clear canvas
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Set the canvas center
+    // Canvas center
 
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
 
-    // Calculate the complete cycle
+    // Calculate the full cycle
 
     const commonDivisor = gcd(R, r);
     const maxT = 2 * Math.PI * (r / commonDivisor);
 
-    // Divide the cycle into small steps.
-    // The final point will be exactly at maxT.
+    // Use a fixed number of points for a smooth, repeatable curve
 
-    const totalPoints = Math.ceil(maxT / 0.01);
+    const totalPoints = Math.ceil(maxT * 500);
+    const pointsPerFrame = 500;
+
     let pointIndex = 0;
-
-    const pointsPerFrame = 300;
-
-    // Set the drawing style
 
     ctx.beginPath();
     ctx.strokeStyle = "#2496FF";
@@ -96,7 +83,7 @@ form.addEventListener("submit", function (event) {
     ctx.lineJoin = "round";
     ctx.lineCap = "round";
 
-    // Calculate the first point
+    // Calculate and move to the first point
 
     const firstX =
         (R + r) * Math.cos(0) -
@@ -106,12 +93,8 @@ form.addEventListener("submit", function (event) {
         (R + r) * Math.sin(0) -
         (r + O) * Math.sin(0);
 
-    ctx.moveTo(
-        centerX + firstX,
-        centerY - firstY
-    );
+    ctx.moveTo(centerX + firstX, centerY - firstY);
 
-    // Draw the pattern progressively
 
     function draw() {
 
@@ -123,8 +106,6 @@ form.addEventListener("submit", function (event) {
         ) {
 
             pointIndex++;
-
-            // Make the last point exactly equal to maxT
 
             const t = maxT * pointIndex / totalPoints;
 
@@ -138,21 +119,12 @@ form.addEventListener("submit", function (event) {
                 (R + r) * Math.sin(t) -
                 (r + O) * Math.sin(((R + r) / r) * t);
 
-            // Convert mathematical coordinates to canvas coordinates
-
-            const canvasX = centerX + x;
-            const canvasY = centerY - y;
-
-            ctx.lineTo(canvasX, canvasY);
+            ctx.lineTo(centerX + x, centerY - y);
 
             pointsDrawn++;
         }
 
-        // Display the new line segments
-
         ctx.stroke();
-
-        // Continue until the entire cycle is drawn
 
         if (pointIndex < totalPoints) {
             animationId = requestAnimationFrame(draw);
