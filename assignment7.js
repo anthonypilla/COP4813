@@ -1,12 +1,11 @@
 
 // Assignment 7 - Drag and Drop
-// Create a standard deck of 52 playing cards.
 
 const suits = [
-    { name: "Spades", symbol: "♠", letter: "S" },
-    { name: "Hearts", symbol: "♥", letter: "H" },
-    { name: "Diamonds", symbol: "♦", letter: "D" },
-    { name: "Clubs", symbol: "♣", letter: "C" }
+    { name: "Spades", symbol: "♠" },
+    { name: "Hearts", symbol: "♥" },
+    { name: "Diamonds", symbol: "♦" },
+    { name: "Clubs", symbol: "♣" }
 ];
 
 const ranks = [
@@ -26,15 +25,16 @@ const ranks = [
 ];
 
 const dealButton = document.getElementById("dealButton");
+const drawButton = document.getElementById("drawButton");
 const playerHand = document.getElementById("playerHand");
 const discardPile = document.getElementById("discardPile");
 const gameMessage = document.getElementById("gameMessage");
 const discardPlaceholder = document.getElementById("discardPlaceholder");
 
 let deck = [];
-let discardedCards = [];
+let handStarted = false;
 
-// Build the standard 52-card deck.
+// Create all 52 cards.
 function createDeck() {
     deck = [];
 
@@ -50,17 +50,16 @@ function createDeck() {
     }
 }
 
-// Randomize the deck using the Fisher-Yates shuffle.
+// Shuffle the deck.
 function shuffleDeck() {
     for (let i = deck.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-
         [deck[i], deck[j]] = [deck[j], deck[i]];
     }
 }
 
 // Create a visual playing card.
-function createCard(card, index) {
+function createCard(card) {
     const cardElement = document.createElement("div");
 
     cardElement.classList.add("playing-card");
@@ -73,38 +72,33 @@ function createCard(card, index) {
 
     cardElement.draggable = true;
     cardElement.dataset.cardName = card.name;
-    cardElement.dataset.cardIndex = index;
+
     cardElement.setAttribute("role", "img");
     cardElement.setAttribute(
         "aria-label",
         card.name + ". Drag to the discard pile to discard."
     );
 
+    cardElement.innerHTML = `
+        <span class="card-corner">
+            <span>${card.value}</span>
+            <span>${card.symbol}</span>
+        </span>
 
-cardElement.innerHTML = `
-    <span class="card-corner">
-        <span>${card.value}</span>
-        <span>${card.symbol}</span>
-    </span>
+        <span class="card-center">${card.symbol}</span>
 
-    <span class="card-center">${card.symbol}</span>
+        <span class="card-corner card-corner-bottom">
+            <span>${card.value}</span>
+            <span>${card.symbol}</span>
+        </span>
+    `;
 
-    <span class="card-corner card-corner-bottom">
-        <span>${card.value}</span>
-        <span>${card.symbol}</span>
-    </span>
-`;
-
-
-    // Start dragging a card.
     cardElement.addEventListener("dragstart", function (event) {
         event.dataTransfer.setData("text/plain", card.name);
         event.dataTransfer.effectAllowed = "move";
-
         cardElement.classList.add("dragging");
     });
 
-    // Remove the dragging appearance when the drag ends.
     cardElement.addEventListener("dragend", function () {
         cardElement.classList.remove("dragging");
     });
@@ -112,49 +106,89 @@ cardElement.innerHTML = `
     return cardElement;
 }
 
-// Deal five cards to the player's hand.
-function dealCards() {
+// Draw one card from the remaining deck.
+function drawOneCard() {
+    if (!handStarted) {
+        gameMessage.textContent =
+            "Click Deal New Hand before drawing cards.";
+        return;
+    }
+
+    if (deck.length === 0) {
+        drawButton.disabled = true;
+        gameMessage.textContent =
+            "The deck is empty! Deal a new hand to start again.";
+        return;
+    }
+
+    const card = deck.pop();
+    playerHand.appendChild(createCard(card));
+
+    gameMessage.textContent =
+        card.name + " drawn successfully! " +
+        deck.length + " cards remain in the deck.";
+
+    updateDrawButton();
+}
+
+// Deal a new hand of five cards.
+function dealNewHand() {
     createDeck();
     shuffleDeck();
 
     playerHand.innerHTML = "";
-    discardedCards = [];
-
     discardPile.innerHTML = "";
-    discardPile.appendChild(discardPlaceholder);
-    discardPlaceholder.style.display = "block";
 
+    discardPlaceholder.style.display = "block";
+    discardPile.appendChild(discardPlaceholder);
+
+    handStarted = true;
+
+    // Deal the first five cards.
     for (let i = 0; i < 5; i++) {
         const card = deck.pop();
-        const cardElement = createCard(card, i);
-
-        playerHand.appendChild(cardElement);
+        playerHand.appendChild(createCard(card));
     }
 
     gameMessage.textContent =
-        "Five cards dealt! Drag a card into the discard pile to discard it.";
+        "New hand dealt! Drag cards to the discard pile or draw one card.";
+
+    updateDrawButton();
 }
 
-// Allow cards to be dropped into the discard pile.
+// Enable drawing only when a hand is active and cards remain.
+function updateDrawButton() {
+    drawButton.disabled = !handStarted || deck.length === 0;
+
+    if (deck.length === 0 && handStarted) {
+        drawButton.textContent = "Deck Empty";
+    } else {
+        drawButton.textContent = "Draw 1 Card";
+    }
+}
+
+// Accept dragged cards over the discard pile.
 discardPile.addEventListener("dragover", function (event) {
     event.preventDefault();
-
     event.dataTransfer.dropEffect = "move";
     discardPile.classList.add("drag-over");
 });
 
-// Remove the highlight when the card leaves the discard pile.
+// Remove the highlight when the card leaves the pile.
 discardPile.addEventListener("dragleave", function (event) {
     if (!discardPile.contains(event.relatedTarget)) {
         discardPile.classList.remove("drag-over");
     }
 });
 
-// Handle a card dropped into the discard pile.
+// Discard a card when dropped onto the discard pile.
 discardPile.addEventListener("drop", function (event) {
     event.preventDefault();
-
     discardPile.classList.remove("drag-over");
+
+    if (!handStarted) {
+        return;
+    }
 
     const cardName = event.dataTransfer.getData("text/plain");
 
@@ -162,9 +196,7 @@ discardPile.addEventListener("drop", function (event) {
         return;
     }
 
-    // Find the card being dragged from the player's hand.
     const cards = playerHand.querySelectorAll(".playing-card");
-
     let selectedCard = null;
 
     for (const card of cards) {
@@ -174,34 +206,32 @@ discardPile.addEventListener("drop", function (event) {
         }
     }
 
-    // Ignore the drop if the card is not in the player's hand.
+    // Ignore cards that are not in the player's hand.
     if (!selectedCard) {
         return;
     }
 
-    // Record the discarded card and remove it from the hand.
-    discardedCards.push(cardName);
     selectedCard.remove();
 
-    // Show the discarded card in the discard pile.
+    // Display the discarded card in the pile.
     const discardedCard = document.createElement("div");
     discardedCard.classList.add("discarded-card");
     discardedCard.textContent = cardName;
-    discardPile.appendChild(discardedCard);
 
     discardPlaceholder.style.display = "none";
+    discardPile.appendChild(discardedCard);
 
-    // Confirm the successful drag-and-drop action.
     gameMessage.textContent =
-        cardName + " discarded successfully!";
+        cardName + " discarded successfully! You can draw a replacement.";
 
-    // Explain when the player's hand is empty.
+    updateDrawButton();
+
     if (playerHand.children.length === 0) {
         gameMessage.textContent =
-            "All cards discarded! Click Deal Cards to play again.";
+            "Your hand is empty! Draw a card or deal a new hand.";
     }
 });
 
-// Deal cards when the user clicks the button.
-dealButton.addEventListener("click", dealCards);
-
+// Connect the buttons to their actions.
+dealButton.addEventListener("click", dealNewHand);
+drawButton.addEventListener("click", drawOneCard);
