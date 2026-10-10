@@ -445,3 +445,74 @@ footer p {
         font-weight: bold;
         margin-top: 20px;
     }
+
+
+
+.parameter-box {
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 20px;
+    background-color: #eaf4ff;
+    border: 1px solid #b8d9f7;
+    border-radius: 8px;
+}
+
+.parameter-box h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.parameter-box .input-group {
+    margin-bottom: 15px;
+}
+
+.parameter-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.parameter-box input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #9fc7e8;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+}
+
+#startButton {
+    background-color: #2496FF;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#startButton:hover {
+    background-color: #1478d4;
+}
+
+#errorMessage {
+    color: #a00000;
+    font-weight: bold;
+}
+
+.canvas-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#spirographCanvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #b8d9f7;
+    border-radius: 8px;
+}
