@@ -1,17 +1,32 @@
 const canvas = document.getElementById("spirographCanvas");
 const ctx = canvas.getContext("2d");
 
-const startButton = document.getElementById("startButton");
+const form = document.getElementById("spirographForm");
 const errorMessage = document.getElementById("errorMessage");
 
 let animationId = null;
 
 
-// Start drawing when the button is clicked
+// Calculate the greatest common divisor
 
-startButton.addEventListener("click", function () {
+function gcd(a, b) {
+    while (b !== 0) {
+        const remainder = a % b;
+        a = b;
+        b = remainder;
+    }
 
-    // Read the parameters entered by the user
+    return a;
+}
+
+
+// Draw the Spirograph when the form is submitted
+
+form.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    // Read the user-entered parameters
 
     const R = Number(document.getElementById("outerRadius").value);
     const r = Number(document.getElementById("innerRadius").value);
@@ -23,18 +38,22 @@ startButton.addEventListener("click", function () {
         !Number.isFinite(R) ||
         !Number.isFinite(r) ||
         !Number.isFinite(O) ||
+        !Number.isInteger(R) ||
+        !Number.isInteger(r) ||
         R <= 0 ||
         r <= 0 ||
         O < 0
     ) {
         errorMessage.textContent =
-            "Enter positive values for R and r, and a nonnegative value for O.";
+            "Enter whole numbers greater than zero for R and r, and a nonnegative value for O.";
         return;
     }
 
-    if (R + r + O > 280) {
+    // Ensure the pattern fits inside the canvas
+
+    if (R + 2 * r + O > 330) {
         errorMessage.textContent =
-            "The combined parameters are too large for the canvas. Reduce the values so R + r + O is 280 or less.";
+            "The pattern may be too large. Reduce the values so R + 2r + O is 330 or less.";
         return;
     }
 
@@ -47,34 +66,67 @@ startButton.addEventListener("click", function () {
         animationId = null;
     }
 
-    // Clear the canvas
+    // Clear the previous pattern
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Set the center of the canvas
+    // Set the canvas center
 
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
 
-    // Start t at zero
+    // Calculate the complete cycle
 
-    let t = 0;
+    const commonDivisor = gcd(R, r);
+    const maxT = 2 * Math.PI * (r / commonDivisor);
 
-    const tIncrement = 0.01;
-    const pointsPerFrame = 20;
-    const maxT = 2 * Math.PI * 100;
+    // Divide the cycle into small steps.
+    // The final point will be exactly at maxT.
 
-    let firstPoint = true;
+    const totalPoints = Math.ceil(maxT / 0.01);
+    let pointIndex = 0;
+
+    const pointsPerFrame = 300;
+
+    // Set the drawing style
 
     ctx.beginPath();
     ctx.strokeStyle = "#2496FF";
     ctx.lineWidth = 1.5;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
 
-    // Draw the Spirograph progressively
+    // Calculate the first point
+
+    const firstX =
+        (R + r) * Math.cos(0) -
+        (r + O) * Math.cos(0);
+
+    const firstY =
+        (R + r) * Math.sin(0) -
+        (r + O) * Math.sin(0);
+
+    ctx.moveTo(
+        centerX + firstX,
+        centerY - firstY
+    );
+
+    // Draw the pattern progressively
 
     function draw() {
 
-        for (let i = 0; i < pointsPerFrame && t <= maxT; i++) {
+        let pointsDrawn = 0;
+
+        while (
+            pointIndex < totalPoints &&
+            pointsDrawn < pointsPerFrame
+        ) {
+
+            pointIndex++;
+
+            // Make the last point exactly equal to maxT
+
+            const t = maxT * pointIndex / totalPoints;
 
             // Spirograph equations
 
@@ -91,19 +143,18 @@ startButton.addEventListener("click", function () {
             const canvasX = centerX + x;
             const canvasY = centerY - y;
 
-            if (firstPoint) {
-                ctx.moveTo(canvasX, canvasY);
-                firstPoint = false;
-            } else {
-                ctx.lineTo(canvasX, canvasY);
-            }
+            ctx.lineTo(canvasX, canvasY);
 
-            t += tIncrement;
+            pointsDrawn++;
         }
+
+        // Display the new line segments
 
         ctx.stroke();
 
-        if (t <= maxT) {
+        // Continue until the entire cycle is drawn
+
+        if (pointIndex < totalPoints) {
             animationId = requestAnimationFrame(draw);
         } else {
             animationId = null;
@@ -111,4 +162,5 @@ startButton.addEventListener("click", function () {
     }
 
     draw();
+
 });
