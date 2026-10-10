@@ -35,26 +35,40 @@
 
     <section class="assignment-page">
 
-        <h2>Assignment 5 - Spirograph</h2>
+    <h2>Assignment 5 - Spirograph</h2>
 
-        <p>
-            This assignment uses HTML5 Canvas and JavaScript to create
-            a Spirograph. The program randomly selects values for the
-            outer circle radius, inner circle radius, and pen offset,
-            then draws the resulting pattern on the canvas.
-        </p>
+    <div class="parameter-box">
+        <h3>Enter Spirograph Parameters</h3>
 
-        <div class="canvas-container">
-            <canvas id="spirographCanvas" width="800" height="600">
-                Your browser does not support the HTML5 canvas element.
-            </canvas>
+        <div class="input-group">
+            <label for="outerRadius">Outer Radius (R):</label>
+            <input type="number" id="outerRadius" value="150" min="1" max="250" required>
+        </div>
+
+        <div class="input-group">
+            <label for="innerRadius">Inner Radius (r):</label>
+            <input type="number" id="innerRadius" value="60" min="1" max="250" required>
+        </div>
+
+        <div class="input-group">
+            <label for="penOffset">Pen Offset (O):</label>
+            <input type="number" id="penOffset" value="40" min="0" max="250" required>
         </div>
 
         <button id="startButton" type="button">
-            Start Spirograph
+            Draw Spirograph
         </button>
 
-    </section>
+        <p id="errorMessage"></p>
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="spirographCanvas" width="800" height="600">
+            Your browser does not support the HTML5 canvas element.
+        </canvas>
+    </div>
+
+</section>
 
 </main>
 
