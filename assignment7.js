@@ -1,27 +1,22 @@
 
-// Assignment 7 - Drag and Drop
+ // Assignment 7 - Drag and Drop with Playing Card Images
 
-const suits = [
-    { name: "Spades", symbol: "♠" },
-    { name: "Hearts", symbol: "♥" },
-    { name: "Diamonds", symbol: "♦" },
-    { name: "Clubs", symbol: "♣" }
-];
+const suits = ["clubs", "diamonds", "hearts", "spades"];
 
 const ranks = [
-    { name: "Ace", value: "A" },
-    { name: "2", value: "2" },
-    { name: "3", value: "3" },
-    { name: "4", value: "4" },
-    { name: "5", value: "5" },
-    { name: "6", value: "6" },
-    { name: "7", value: "7" },
-    { name: "8", value: "8" },
-    { name: "9", value: "9" },
-    { name: "10", value: "10" },
-    { name: "Jack", value: "J" },
-    { name: "Queen", value: "Q" },
-    { name: "King", value: "K" }
+    { name: "Ace", file: "ace" },
+    { name: "2", file: "2" },
+    { name: "3", file: "3" },
+    { name: "4", file: "4" },
+    { name: "5", file: "5" },
+    { name: "6", file: "6" },
+    { name: "7", file: "7" },
+    { name: "8", file: "8" },
+    { name: "9", file: "9" },
+    { name: "10", file: "10" },
+    { name: "Jack", file: "jack" },
+    { name: "Queen", file: "queen" },
+    { name: "King", file: "king" }
 ];
 
 const dealButton = document.getElementById("dealButton");
@@ -34,23 +29,23 @@ const discardPlaceholder = document.getElementById("discardPlaceholder");
 let deck = [];
 let handStarted = false;
 
-// Create all 52 cards.
+// Create a standard 52-card deck.
 function createDeck() {
     deck = [];
 
     for (const suit of suits) {
         for (const rank of ranks) {
             deck.push({
-                name: rank.name + " of " + suit.name,
-                value: rank.value,
-                suit: suit.name,
-                symbol: suit.symbol
+                name: rank.name + " of " +
+                    suit.charAt(0).toUpperCase() + suit.slice(1),
+                image: "PNG-cards-1.3/" +
+                    rank.file + "_of_" + suit + ".png"
             });
         }
     }
 }
 
-// Shuffle the deck.
+// Shuffle the deck so cards are dealt randomly.
 function shuffleDeck() {
     for (let i = deck.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -58,40 +53,24 @@ function shuffleDeck() {
     }
 }
 
-// Create a visual playing card.
+// Create a playing card using its actual image file.
 function createCard(card) {
     const cardElement = document.createElement("div");
-
     cardElement.classList.add("playing-card");
-
-    if (card.suit === "Hearts" || card.suit === "Diamonds") {
-        cardElement.classList.add("red-card");
-    } else {
-        cardElement.classList.add("black-card");
-    }
-
     cardElement.draggable = true;
     cardElement.dataset.cardName = card.name;
 
-    cardElement.setAttribute("role", "img");
+    const cardImage = document.createElement("img");
+    cardImage.src = card.image;
+    cardImage.alt = card.name;
+    cardImage.draggable = false;
+
+    cardElement.appendChild(cardImage);
+
     cardElement.setAttribute(
         "aria-label",
         card.name + ". Drag to the discard pile to discard."
     );
-
-    cardElement.innerHTML = `
-        <span class="card-corner">
-            <span>${card.value}</span>
-            <span>${card.symbol}</span>
-        </span>
-
-        <span class="card-center">${card.symbol}</span>
-
-        <span class="card-corner card-corner-bottom">
-            <span>${card.value}</span>
-            <span>${card.symbol}</span>
-        </span>
-    `;
 
     cardElement.addEventListener("dragstart", function (event) {
         event.dataTransfer.setData("text/plain", card.name);
@@ -115,7 +94,7 @@ function drawOneCard() {
     }
 
     if (deck.length === 0) {
-        drawButton.disabled = true;
+        updateDrawButton();
         gameMessage.textContent =
             "The deck is empty! Deal a new hand to start again.";
         return;
@@ -131,7 +110,7 @@ function drawOneCard() {
     updateDrawButton();
 }
 
-// Deal a new hand of five cards.
+// Deal five cards from a newly shuffled deck.
 function dealNewHand() {
     createDeck();
     shuffleDeck();
@@ -144,7 +123,6 @@ function dealNewHand() {
 
     handStarted = true;
 
-    // Deal the first five cards.
     for (let i = 0; i < 5; i++) {
         const card = deck.pop();
         playerHand.appendChild(createCard(card));
@@ -156,7 +134,7 @@ function dealNewHand() {
     updateDrawButton();
 }
 
-// Enable drawing only when a hand is active and cards remain.
+// Enable or disable the draw button as needed.
 function updateDrawButton() {
     drawButton.disabled = !handStarted || deck.length === 0;
 
@@ -167,21 +145,21 @@ function updateDrawButton() {
     }
 }
 
-// Accept dragged cards over the discard pile.
+// Allow cards to be dragged over the discard pile.
 discardPile.addEventListener("dragover", function (event) {
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
     discardPile.classList.add("drag-over");
 });
 
-// Remove the highlight when the card leaves the pile.
+// Remove the highlight when the dragged card leaves.
 discardPile.addEventListener("dragleave", function (event) {
     if (!discardPile.contains(event.relatedTarget)) {
         discardPile.classList.remove("drag-over");
     }
 });
 
-// Discard a card when dropped onto the discard pile.
+// Handle the drop event and confirm the discard.
 discardPile.addEventListener("drop", function (event) {
     event.preventDefault();
     discardPile.classList.remove("drag-over");
@@ -206,29 +184,29 @@ discardPile.addEventListener("drop", function (event) {
         }
     }
 
-    // Ignore cards that are not in the player's hand.
+    // Only accept cards currently in the player's hand.
     if (!selectedCard) {
         return;
     }
 
+    // Remove the card from the player's hand.
     selectedCard.remove();
 
-    
-// Preserve the card's complete visual design in the discard pile.
+    // Keep the actual image in the discard pile.
     const discardedCard = selectedCard.cloneNode(true);
-    
     discardedCard.classList.remove("dragging");
     discardedCard.classList.add("discarded-playing-card");
     discardedCard.draggable = false;
-    
+
     discardedCard.setAttribute(
         "aria-label",
         cardName + ", discarded"
     );
-    
+
     discardPlaceholder.style.display = "none";
     discardPile.appendChild(discardedCard);
 
+    // Display a visible confirmation of the drop event.
     gameMessage.textContent =
         cardName + " discarded successfully! You can draw a replacement.";
 
