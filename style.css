@@ -719,26 +719,30 @@ footer p {
     color: #222;
 }
 
-/* Card corner values */
+
+/* Playing card corner values and suits */
 .card-corner {
     position: absolute;
-    top: 8px;
-    left: 8px;
-    font-size: 18px;
+    top: 7px;
+    left: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 17px;
     font-weight: bold;
-    line-height: 1.1;
-    text-align: center;
+    line-height: 1;
+    gap: 2px;
 }
 
 .card-corner-bottom {
     top: auto;
     left: auto;
-    right: 8px;
-    bottom: 8px;
+    right: 7px;
+    bottom: 7px;
     transform: rotate(180deg);
 }
 
-/* Large suit symbol in the center */
+/* Center suit symbol */
 .card-center {
     position: absolute;
     top: 50%;
@@ -746,6 +750,18 @@ footer p {
     transform: translate(-50%, -50%);
     font-size: 48px;
 }
+
+/* Keep card art readable on smaller screens */
+@media (max-width: 600px) {
+    .card-corner {
+        font-size: 14px;
+    }
+
+    .card-center {
+        font-size: 38px;
+    }
+}
+
 
 /* Discard pile area */
 .discard-area {
