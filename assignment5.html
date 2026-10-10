@@ -1,85 +1,141 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="An interactive Spirograph using HTML5 Canvas and user-entered mathematical parameters.">
+    <meta name="author" content="Anthony Pilla">
 
-<meta name="description" content="Assignment 5 for COP4813 featuring a JavaScript Spirograph using HTML5 Canvas.">
-<meta name="author" content="Anthony Pilla">
+    <title>Assignment 5 - Spirograph</title>
 
-<title>Assignment 5 - Spirograph</title>
-
-<link rel="stylesheet" href="style.css">
-
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <header>
+        <h1>Anthony Pilla</h1>
+        <p class="subtitle">COP4813 - Web Programming</p>
 
-<header>
-    <h1>Anthony Pilla</h1>
-    <p class="subtitle">COP4813 - Web Programming</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="assignments.html">My Assignments</a>
+            <a href="index.html#resources">Resources</a>
+        </nav>
+    </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="assignments.html">My Assignments</a>
-        <a href="index.html#resources">Resources</a>
-    </nav>
-</header>
+    <main>
 
-<main>
+        <section class="assignment-page spirograph-page">
 
-    <section class="assignment-page">
+            <h2>Assignment 5 - Spirograph</h2>
 
-    <h2>Assignment 5 - Spirograph</h2>
+            <div class="spirograph-equation">
+                <h3>Spirograph Equations</h3>
 
-    <div class="parameter-box">
-        <h3>Enter Spirograph Parameters</h3>
+                <p>
+                    x = (R + r) cos(t) - (r + O) cos(((R + r) / r) × t)
+                </p>
 
-        <div class="input-group">
-            <label for="outerRadius">Outer Radius (R):</label>
-            <input type="number" id="outerRadius" value="150" min="1" max="250" required>
-        </div>
+                <p>
+                    y = (R + r) sin(t) - (r + O) sin(((R + r) / r) × t)
+                </p>
 
-        <div class="input-group">
-            <label for="innerRadius">Inner Radius (r):</label>
-            <input type="number" id="innerRadius" value="60" min="1" max="250" required>
-        </div>
+                <p class="parameter-description">
+                    R = outer radius |
+                    r = inner radius |
+                    O = pen offset |
+                    t = angle
+                </p>
+            </div>
 
-        <div class="input-group">
-            <label for="penOffset">Pen Offset (O):</label>
-            <input type="number" id="penOffset" value="40" min="0" max="250" required>
-        </div>
+            <div class="spirograph-controls">
 
-        <button id="startButton" type="button">
-            Draw Spirograph
-        </button>
+                <h3>Enter Parameters</h3>
 
-        <p id="errorMessage"></p>
-    </div>
+                <p>
+                    Change the values below to create different
+                    Spirograph patterns.
+                </p>
 
-    <div class="canvas-container">
-        <canvas id="spirographCanvas" width="800" height="600">
-            Your browser does not support the HTML5 canvas element.
-        </canvas>
-    </div>
+                <form id="spirographForm">
 
-</section>
+                    <div class="input-group">
+                        <label for="outerRadius">Outer Radius (R):</label>
+                        <input
+                            type="number"
+                            id="outerRadius"
+                            value="150"
+                            min="1"
+                            max="250"
+                            step="1"
+                            required
+                        >
+                    </div>
 
-</main>
+                    <div class="input-group">
+                        <label for="innerRadius">Inner Radius (r):</label>
+                        <input
+                            type="number"
+                            id="innerRadius"
+                            value="60"
+                            min="1"
+                            max="250"
+                            step="1"
+                            required
+                        >
+                    </div>
 
-<footer>
-    <p>Created by Anthony Pilla | COP4813</p>
-</footer>
+                    <div class="input-group">
+                        <label for="penOffset">Pen Offset (O):</label>
+                        <input
+                            type="number"
+                            id="penOffset"
+                            value="40"
+                            min="0"
+                            max="250"
+                            step="any"
+                            required
+                        >
+                    </div>
 
-<script src="assignment5.js"></script>
+                    <button id="startButton" type="submit">
+                        Draw Spirograph
+                    </button>
 
+                </form>
+
+                <p id="errorMessage" role="alert"></p>
+
+            </div>
+
+            <div class="spirograph-canvas-container">
+
+                <h3>Your Spirograph</h3>
+
+                <canvas id="spirographCanvas" width="800" height="700">
+                    Your browser does not support HTML5 Canvas.
+                </canvas>
+
+                <p class="canvas-caption">
+                    Enter your parameters and click Draw Spirograph
+                    to generate the pattern.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Created by Anthony Pilla | COP4813</p>
+    </footer>
+
+    <script src="assignment5.js"></script>
 
 </body>
 
 </html>
-
