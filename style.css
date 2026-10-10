@@ -889,3 +889,21 @@ footer p {
 }
 
 
+
+.drag-drop-page .playing-card {
+    padding: 0;
+    overflow: hidden;
+    background: white;
+}
+
+.drag-drop-page .playing-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.drag-drop-page .discarded-playing-card {
+    cursor: default;
+}
+
