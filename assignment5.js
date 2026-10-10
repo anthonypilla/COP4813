@@ -7,7 +7,7 @@ const errorMessage = document.getElementById("errorMessage");
 let animationId = null;
 
 
-// Greatest common divisor
+// Calculate the greatest common divisor
 
 function gcd(a, b) {
     while (b !== 0) {
@@ -20,7 +20,7 @@ function gcd(a, b) {
 }
 
 
-// Draw the Spirograph
+// Draw the Spirograph when the form is submitted
 
 form.addEventListener("submit", function (event) {
 
@@ -30,7 +30,7 @@ form.addEventListener("submit", function (event) {
     const r = Number(document.getElementById("innerRadius").value);
     const O = Number(document.getElementById("penOffset").value);
 
-    // Validate input
+    // Validate parameters
 
     if (
         !Number.isFinite(R) ||
@@ -47,33 +47,31 @@ form.addEventListener("submit", function (event) {
         return;
     }
 
-    errorMessage.textContent = "";
-
-    // Stop previous animation
+    // Stop a previous animation
 
     if (animationId !== null) {
         cancelAnimationFrame(animationId);
         animationId = null;
     }
 
-    // Clear canvas
+    errorMessage.textContent = "";
+
+    // Clear the canvas
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Canvas center
 
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
 
-    // Calculate the full cycle
+    // Calculate the complete cycle
 
     const commonDivisor = gcd(R, r);
     const maxT = 2 * Math.PI * (r / commonDivisor);
 
-    // Use a fixed number of points for a smooth, repeatable curve
+    // Smaller batches make the drawing visibly progressive
 
-    const totalPoints = Math.ceil(maxT * 500);
-    const pointsPerFrame = 500;
+    const totalPoints = Math.ceil(maxT * 200);
+    const pointsPerFrame = 30;
 
     let pointIndex = 0;
 
@@ -83,18 +81,15 @@ form.addEventListener("submit", function (event) {
     ctx.lineJoin = "round";
     ctx.lineCap = "round";
 
-    // Calculate and move to the first point
+    // Calculate the starting point
 
-    const firstX =
-        (R + r) * Math.cos(0) -
-        (r + O) * Math.cos(0);
-
-    const firstY =
-        (R + r) * Math.sin(0) -
-        (r + O) * Math.sin(0);
+    const firstX = R - O;
+    const firstY = 0;
 
     ctx.moveTo(centerX + firstX, centerY - firstY);
 
+
+    // Draw a small part of the curve each frame
 
     function draw() {
 
@@ -104,7 +99,6 @@ form.addEventListener("submit", function (event) {
             pointIndex < totalPoints &&
             pointsDrawn < pointsPerFrame
         ) {
-
             pointIndex++;
 
             const t = maxT * pointIndex / totalPoints;
@@ -124,7 +118,11 @@ form.addEventListener("submit", function (event) {
             pointsDrawn++;
         }
 
+        // Show the newly drawn section
+
         ctx.stroke();
+
+        // Continue until the complete pattern is drawn
 
         if (pointIndex < totalPoints) {
             animationId = requestAnimationFrame(draw);
