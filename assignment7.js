@@ -80,15 +80,21 @@ function createCard(card, index) {
         card.name + ". Drag to the discard pile to discard."
     );
 
-    cardElement.innerHTML = `
-        <span class="card-corner">
-            ${card.value}<br>${card.symbol}
-        </span>
-        <span class="card-center">${card.symbol}</span>
-        <span class="card-corner card-corner-bottom">
-            ${card.value}<br>${card.symbol}
-        </span>
-    `;
+
+cardElement.innerHTML = `
+    <span class="card-corner">
+        <span>${card.value}</span>
+        <span>${card.symbol}</span>
+    </span>
+
+    <span class="card-center">${card.symbol}</span>
+
+    <span class="card-corner card-corner-bottom">
+        <span>${card.value}</span>
+        <span>${card.symbol}</span>
+    </span>
+`;
+
 
     // Start dragging a card.
     cardElement.addEventListener("dragstart", function (event) {
