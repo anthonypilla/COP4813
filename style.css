@@ -447,46 +447,101 @@ footer p {
     }
 
 
+/* Assignment 5 - Spirograph */
 
-.parameter-box {
+
+/* Main Spirograph Page */
+
+.spirograph-page h2 {
+    color: #2496FF;
+}
+
+
+/* Equation Section */
+
+.spirograph-equation {
+    background-color: #eaf4ff;
+    border: 1px solid #b8d9f7;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 25px 0;
+    overflow-wrap: anywhere;
+}
+
+.spirograph-equation h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.spirograph-equation p {
+    text-align: center;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.spirograph-equation .parameter-description {
+    font-size: 14px;
+    font-weight: normal;
+    color: #555;
+}
+
+
+/* Parameter Controls */
+
+.spirograph-controls {
     max-width: 500px;
     margin: 25px auto;
-    padding: 20px;
+    padding: 25px;
     background-color: #eaf4ff;
     border: 1px solid #b8d9f7;
     border-radius: 8px;
 }
 
-.parameter-box h3 {
+.spirograph-controls h3 {
     margin-top: 0;
     color: #333;
 }
 
-.parameter-box .input-group {
-    margin-bottom: 15px;
+.spirograph-controls .input-group {
+    margin-bottom: 18px;
 }
 
-.parameter-box label {
+.spirograph-controls label {
     display: block;
-    margin-bottom: 6px;
+    color: #333;
     font-weight: bold;
+    margin-bottom: 6px;
 }
 
-.parameter-box input {
+.spirograph-controls input {
+    display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 11px;
     border: 1px solid #9fc7e8;
     border-radius: 5px;
     background-color: white;
+    color: #333;
+    font-family: Arial, sans-serif;
     font-size: 16px;
 }
 
+.spirograph-controls input:focus {
+    outline: none;
+    border-color: #2496FF;
+    box-shadow: 0 0 0 2px rgba(36, 150, 255, 0.15);
+}
+
+
+/* Draw Button */
+
 #startButton {
+    display: block;
+    width: 100%;
     background-color: #2496FF;
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 12px 20px;
     border-radius: 6px;
     font-size: 16px;
     font-weight: bold;
@@ -497,22 +552,63 @@ footer p {
     background-color: #1478d4;
 }
 
-#errorMessage {
+
+/* Validation Message */
+
+.spirograph-controls #errorMessage {
     color: #a00000;
     font-weight: bold;
+    margin-bottom: 0;
 }
 
-.canvas-container {
+
+/* Canvas */
+
+.spirograph-canvas-container {
+    margin-top: 30px;
     text-align: center;
-    margin: 30px 0;
+}
+
+.spirograph-canvas-container h3 {
+    color: #2496FF;
 }
 
 #spirographCanvas {
     display: block;
-    max-width: 100%;
+    width: 100%;
+    max-width: 800px;
     height: auto;
     margin: 0 auto;
     background-color: white;
     border: 1px solid #b8d9f7;
     border-radius: 8px;
+}
+
+.spirograph-canvas-container .canvas-caption {
+    color: #555;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+
+/* Mobile Layout */
+
+@media (max-width: 600px) {
+
+    .spirograph-controls {
+        padding: 18px;
+    }
+
+    .spirograph-equation {
+        padding: 15px;
+    }
+
+    .spirograph-equation p {
+        font-size: 14px;
+    }
+
+    #startButton {
+        padding: 12px;
+    }
+
 }
