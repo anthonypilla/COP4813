@@ -2,143 +2,113 @@ const canvas = document.getElementById("spirographCanvas");
 const ctx = canvas.getContext("2d");
 
 const startButton = document.getElementById("startButton");
+const errorMessage = document.getElementById("errorMessage");
 
 let animationId = null;
 
-// Start the Spirograph
+
+// Start drawing when the button is clicked
 
 startButton.addEventListener("click", function () {
 
+    // Read the parameters entered by the user
 
-// Stop any previous drawing
+    const R = Number(document.getElementById("outerRadius").value);
+    const r = Number(document.getElementById("innerRadius").value);
+    const O = Number(document.getElementById("penOffset").value);
 
-if (animationId !== null) {
-    cancelAnimationFrame(animationId);
-}
+    // Validate the parameters
 
+    if (
+        !Number.isFinite(R) ||
+        !Number.isFinite(r) ||
+        !Number.isFinite(O) ||
+        R <= 0 ||
+        r <= 0 ||
+        O < 0
+    ) {
+        errorMessage.textContent =
+            "Enter positive values for R and r, and a nonnegative value for O.";
+        return;
+    }
 
-// Clear the canvas
+    if (R + r + O > 280) {
+        errorMessage.textContent =
+            "The combined parameters are too large for the canvas. Reduce the values so R + r + O is 280 or less.";
+        return;
+    }
 
-ctx.clearRect(0, 0, canvas.width, canvas.height);
+    errorMessage.textContent = "";
 
+    // Stop any previous animation
 
-// Generate random values
+    if (animationId !== null) {
+        cancelAnimationFrame(animationId);
+        animationId = null;
+    }
 
-const R = randomNumber(100, 250);
-const r = randomNumber(20, R - 20);
-const O = randomNumber(0, r);
+    // Clear the canvas
 
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-// Center of the canvas
+    // Set the center of the canvas
 
-const centerX = canvas.width / 2;
-const centerY = canvas.height / 2;
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
 
+    // Start t at zero
 
-// Starting value of t
+    let t = 0;
 
-let t = 0;
+    const tIncrement = 0.01;
+    const pointsPerFrame = 20;
+    const maxT = 2 * Math.PI * 100;
 
-// Amount t increases for each point
+    let firstPoint = true;
 
-const tIncrement = 0.01;
+    ctx.beginPath();
+    ctx.strokeStyle = "#2496FF";
+    ctx.lineWidth = 1.5;
 
+    // Draw the Spirograph progressively
 
-// Number of points drawn per animation frame
+    function draw() {
 
-const pointsPerFrame = 100;
+        for (let i = 0; i < pointsPerFrame && t <= maxT; i++) {
 
+            // Spirograph equations
 
-// Begin drawing
+            const x =
+                (R + r) * Math.cos(t) -
+                (r + O) * Math.cos(((R + r) / r) * t);
 
-ctx.beginPath();
+            const y =
+                (R + r) * Math.sin(t) -
+                (r + O) * Math.sin(((R + r) / r) * t);
 
-let firstPoint = true;
+            // Convert mathematical coordinates to canvas coordinates
 
+            const canvasX = centerX + x;
+            const canvasY = centerY - y;
 
-function draw() {
+            if (firstPoint) {
+                ctx.moveTo(canvasX, canvasY);
+                firstPoint = false;
+            } else {
+                ctx.lineTo(canvasX, canvasY);
+            }
 
-    // Draw several points during each frame
-
-    for (let i = 0; i < pointsPerFrame; i++) {
-
-        // Calculate the x and y positions
-        // using the Spirograph equations
-
-        const x =
-            (R + r) * Math.cos(t) -
-            (r + O) * Math.cos(((R + r) / r) * t);
-
-        const y =
-            (R + r) * Math.sin(t) -
-            (r + O) * Math.sin(((R + r) / r) * t);
-
-
-        // Convert mathematical coordinates
-        // to canvas coordinates
-
-        const canvasX = centerX + x;
-        const canvasY = centerY - y;
-
-
-        // Move to the first point
-
-        if (firstPoint) {
-
-            ctx.moveTo(canvasX, canvasY);
-
-            firstPoint = false;
-
-        } else {
-
-            ctx.lineTo(canvasX, canvasY);
-
+            t += tIncrement;
         }
 
+        ctx.stroke();
 
-        // Increase t
-
-        t += tIncrement;
-
+        if (t <= maxT) {
+            animationId = requestAnimationFrame(draw);
+        } else {
+            animationId = null;
+        }
     }
 
-
-    // Draw the new line segments
-
-    ctx.stroke();
-
-
-    // Continue drawing
-
-    if (t < Math.PI * 2 * 20) {
-
-        animationId = requestAnimationFrame(draw);
-
-    } else {
-
-        animationId = null;
-
-    }
-
-}
-
-
-// Start the animation
-
-draw();
-
-
+    draw();
 });
-
-// Generate a random whole number
-// between min and max
-
-function randomNumber(min, max) {
-
-
-return Math.floor(
-    Math.random() * (max - min + 1)
-) + min;
-
-
-}
