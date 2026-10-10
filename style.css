@@ -850,3 +850,42 @@ footer p {
     }
 }
 
+
+/* Assignment 7 - Card game buttons */
+
+#drawButton {
+    background-color: #198754;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 30px;
+    margin: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#drawButton:hover:not(:disabled) {
+    background-color: #146c43;
+}
+
+#drawButton:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#dealButton {
+    margin: 8px;
+}
+
+@media (max-width: 600px) {
+    #dealButton,
+    #drawButton {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 6px 0;
+    }
+}
+
+
