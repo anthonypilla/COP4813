@@ -1,1 +1,74 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive playing card drag-and-drop game using HTML5 and JavaScript.">
+    <meta name="author" content="Anthony Pilla">
+    <title>Assignment 7 - Drag and Drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Anthony Pilla</h1>
+        <p class="subtitle">COP4813 - Web Programming</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="assignments.html">My Assignments</a>
+            <a href="index.html#resources">Resources</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="assignment-page drag-drop-page">
+            <h2>Assignment 7 - Drag and Drop</h2>
+
+            <p>
+                Deal playing cards, drag them into the discard pile, and see
+                a confirmation when a card is successfully discarded.
+            </p>
+
+            <div class="card-game-controls">
+                <button type="button" id="dealButton">
+                    Deal Cards
+                </button>
+            </div>
+
+            <p id="gameMessage" role="status" aria-live="polite">
+                Click "Deal Cards" to begin.
+            </p>
+
+            <section class="card-area">
+                <h3>Your Hand</h3>
+                <p>Drag a card from your hand into the discard pile.</p>
+
+                <div id="playerHand" class="player-hand">
+                    <!-- Playing cards will be added here by JavaScript. -->
+                </div>
+            </section>
+
+            <section class="discard-area">
+                <h3>Discard Pile</h3>
+                <p>Drop a card here to discard it.</p>
+
+                <div id="discardPile"
+                     class="discard-pile"
+                     aria-label="Discard pile. Drop playing cards here.">
+                    <span id="discardPlaceholder">
+                        Drop Cards Here
+                    </span>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by Anthony Pilla | COP4813</p>
+    </footer>
+
+    <script src="assignment7.js"></script>
+</body>
+</html>
+
