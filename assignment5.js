@@ -71,7 +71,7 @@ form.addEventListener("submit", function (event) {
     // Smaller batches make the drawing visibly progressive
 
     const totalPoints = Math.ceil(maxT * 200);
-    const pointsPerFrame = 3;
+    const pointsPerFrame = 30;
 
     let pointIndex = 0;
 
