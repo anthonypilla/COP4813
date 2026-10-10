@@ -213,11 +213,19 @@ discardPile.addEventListener("drop", function (event) {
 
     selectedCard.remove();
 
-    // Display the discarded card in the pile.
-    const discardedCard = document.createElement("div");
-    discardedCard.classList.add("discarded-card");
-    discardedCard.textContent = cardName;
-
+    
+// Preserve the card's complete visual design in the discard pile.
+    const discardedCard = selectedCard.cloneNode(true);
+    
+    discardedCard.classList.remove("dragging");
+    discardedCard.classList.add("discarded-playing-card");
+    discardedCard.draggable = false;
+    
+    discardedCard.setAttribute(
+        "aria-label",
+        cardName + ", discarded"
+    );
+    
     discardPlaceholder.style.display = "none";
     discardPile.appendChild(discardedCard);
 
