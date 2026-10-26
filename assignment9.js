@@ -134,11 +134,13 @@ canvas.addEventListener("click", function(event) {
 
     if (distance <= ball.radius) {
         // Simulate hitting the baseball in a new direction.
-        const angle = -Math.PI / 4 + (Math.random() - 0.5) * 0.8;
+        
+        const angle = Math.random() * Math.PI * 2;
         const speed = 10;
-
+        
         ball.dx = Math.cos(angle) * speed;
         ball.dy = Math.sin(angle) * speed;
+
 
         ball.hit = true;
         ball.hitTimer = 150;
