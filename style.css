@@ -907,3 +907,60 @@ footer p {
     cursor: default;
 }
 
+
+/* Assignment 9 - Baseball Animation */
+
+.baseball-game {
+    width: 100%;
+    max-width: 800px;
+    margin: 25px auto;
+    padding: 15px;
+    background-color: #e8f1f8;
+    border: 2px solid #c5d9e8;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#baseballCanvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #398542;
+    border: 2px solid #294d32;
+    border-radius: 8px;
+}
+
+#gameMessage {
+    margin: 15px 0 5px;
+    padding: 12px;
+    color: #17365d;
+    background-color: #ffffff;
+    border-left: 5px solid #2496FF;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.assignment-page .baseball-game + p {
+    max-width: 800px;
+    margin: 15px auto;
+    color: #333333;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 600px) {
+    .baseball-game {
+        margin: 20px auto;
+        padding: 8px;
+    }
+
+    #gameMessage {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
