@@ -107,7 +107,7 @@ function updateBall(timeScale) {
             ball.dy = ball.dy < 0 ? -2 : 2;
 
             gameMessage.textContent =
-                "The baseball has returned to its normal speed. Click it to hit it again!";
+                "The baseball has returned to its normal speed. Click to hit it again!";
         }
     }
 
