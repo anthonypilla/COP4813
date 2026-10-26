@@ -912,13 +912,13 @@ footer p {
 
 .baseball-game {
     width: 100%;
-    max-width: 800px;
+    max-width: 950px;
     margin: 25px auto;
-    padding: 15px;
+    padding: 10px;
+    box-sizing: border-box;
     background-color: #e8f1f8;
     border: 2px solid #c5d9e8;
     border-radius: 12px;
-    box-sizing: border-box;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -926,11 +926,12 @@ footer p {
     display: block;
     width: 100%;
     height: auto;
+    margin: 0 auto;
+    box-sizing: border-box;
     background-color: #398542;
     border: 2px solid #294d32;
     border-radius: 8px;
 }
-
 #gameMessage {
     margin: 15px 0 5px;
     padding: 12px;
