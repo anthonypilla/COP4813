@@ -107,7 +107,7 @@ function updateBall(timeScale) {
             ball.dy = ball.dy < 0 ? -2 : 2;
 
             gameMessage.textContent =
-                "The baseball has returned to its normal movement. Click it to hit it again!";
+                "The baseball has returned to its normal speed. Click it to hit it again!";
         }
     }
 
@@ -148,7 +148,7 @@ canvas.addEventListener("click", function(event) {
             "HIT! The baseball was clicked and launched across the field!";
     } else {
         gameMessage.textContent =
-            "You clicked the field. Click directly on the baseball to hit it!";
+            "Swing and a miss! Click directly on the baseball to hit it!";
     }
 });
 
