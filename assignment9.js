@@ -9,7 +9,7 @@ fieldImage.src = "images/baseballfield.jpg";
 
 // Load the baseball image.
 const baseballImage = new Image();
-baseballImage.src = "images/baseball.webp";
+baseballImage.src = "images/baseball.png";
 
 // Baseball movement and animation settings.
 const ball = {
