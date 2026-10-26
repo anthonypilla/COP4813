@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="COP4813 Assignment 9: An interactive baseball animation using JavaScript and HTML5 Canvas.">
+    <title>Assignment 9 - Baseball Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+    <header>
+        <h1>Anthony Pilla</h1>
+        <p class="subtitle">COP4813 - Web Programming</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="assignments.html">My Assignments</a>
+            <a href="index.html#resources">Resources</a>
+        </nav>
+    </header>
+
+    <main class="assignment-page">
+        <h2>Baseball Animation</h2>
+
+        <p>
+            Watch the baseball bounce around the playing area.
+            Click the baseball to hit it with an imaginary bat and
+            send it flying in a new direction!
+        </p>
+
+        <div class="baseball-game">
+            <canvas id="baseballCanvas" width="800" height="450">
+                Your browser does not support the HTML5 Canvas element.
+            </canvas>
+        </div>
+
+        <p id="gameMessage" role="status" aria-live="polite">
+            The baseball is ready! Click the ball to hit it.
+        </p>
+
+        <p class="animation-instructions">
+            <strong>How to play:</strong> Click the baseball while it is
+            moving to simulate hitting it with a bat. Watch it accelerate,
+            bounce off the boundaries, and gradually return to its normal
+            movement.
+        </p>
+    </main>
+
+    <footer>
+        <p>Created by Anthony Pilla</p>
+    </footer>
+
+    <script src="assignment9.js"></script>
+</body>
+</html>
