@@ -1,0 +1,473 @@
+{
+  "program": {
+    "name": "Bachelor of Science in Information Technology",
+    "abbreviation": "BSIT",
+    "college": "Daytona State College",
+    "sourceYear": "2025-2026",
+    "coreCreditHours": 45,
+    "electiveCreditHours": 3
+  },
+  "courses": [
+    {
+      "code": "MAC1105",
+      "name": "College Algebra",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "MAC1114",
+      "name": "Trigonometry",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "MAC1140",
+      "name": "Pre-Calculus",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "MAC2311C",
+      "name": "Calculus I (Graduate Pathway)",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "EGN2045",
+      "name": "Engineering Technical Calculus I (Technical Pathway)",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "EGN3443",
+      "name": "Probability and Statistics for Engineers",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      },
+      "notes": "Listed as a preferred course."
+    },
+    {
+      "code": "STA2023",
+      "name": "Elementary Statistics",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "COT3100",
+      "name": "Discrete Analysis",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      },
+      "notes": "Listed as a preferred course."
+    },
+    {
+      "code": "MAD2104",
+      "name": "Discrete Mathematics",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "COP1000",
+      "name": "Principles of Computer Programming",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "COP2800",
+      "name": "Computer Programming Java",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "COP2360",
+      "name": "C# Programming",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "COP2220",
+      "name": "Computer Programming C",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "CET3116",
+      "name": "Digital Technology",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      },
+      "notes": "Listed as a preferred course."
+    },
+    {
+      "code": "CET1112C",
+      "name": "Digital Fundamentals and Lab",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "EET3086",
+      "name": "Electrical Circuits",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      },
+      "notes": "Listed as a preferred course."
+    },
+    {
+      "code": "EET3085",
+      "name": "Principles of Electrical Circuits (Lecture Only)",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "EET1021C",
+      "name": "Advanced Electrical Circuits and Lab (AC)",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "EET1011C",
+      "name": "Introduction to Electrical Circuits and Lab (DC)",
+      "category": "lower-level",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "CIS4250",
+      "name": "Ethical Issues in IT",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "all",
+        "courses": ["GEB3213"]
+      }
+    },
+    {
+      "code": "GEB3213",
+      "name": "Business Writing",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "all",
+        "courses": ["ENC1101"]
+      }
+    },
+    {
+      "code": "COP3530",
+      "name": "Data Structures",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "all",
+        "groups": [
+          {
+            "type": "any",
+            "courses": ["COP2800", "COP2220", "COP2360"]
+          },
+          {
+            "type": "any",
+            "courses": ["COT3100", "MAD2104"]
+          }
+        ]
+      }
+    },
+    {
+      "code": "CTS3348",
+      "name": "Linux Administration",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "any",
+        "courses": [
+          "MAC1105",
+          "MAC1114",
+          "MAC1140",
+          "MAC2311C",
+          "EGN2045"
+        ]
+      },
+      "notes": "The source sheet specifies MAC1105 or higher. The listed mathematics courses are represented here as the available options for that requirement."
+    },
+    {
+      "code": "CEN3722",
+      "name": "Human Computer Interfaces",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "any",
+        "courses": ["COP2800", "COP2220", "COP2360"]
+      }
+    },
+    {
+      "code": "COP4708",
+      "name": "Applied Database I",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "any",
+        "courses": ["COP2800", "COP2220", "COP2360"]
+      }
+    },
+    {
+      "code": "COP4610",
+      "name": "Operating Systems",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "all",
+        "courses": ["CTS3348"]
+      }
+    },
+    {
+      "code": "CIS4360",
+      "name": "Applied Cybersecurity",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "all",
+        "groups": [
+          {
+            "type": "all",
+            "courses": ["CTS3348"]
+          },
+          {
+            "type": "any",
+            "courses": ["CET1600", "CNT3104"]
+          }
+        ]
+      }
+    },
+    {
+      "code": "CNT3104",
+      "name": "Introduction to Telecommunications",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "any",
+        "courses": ["EET1021C", "EET3086"]
+      }
+    },
+    {
+      "code": "CNT4007",
+      "name": "Data and Computer Communications",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "all",
+        "groups": [
+          {
+            "type": "all",
+            "courses": ["CNT3104"]
+          },
+          {
+            "type": "any",
+            "courses": ["STA2023", "EGN3443"]
+          }
+        ]
+      }
+    },
+    {
+      "code": "CNT4703",
+      "name": "Voice and Data Network Design",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "all",
+        "courses": ["CNT4007"]
+      }
+    },
+    {
+      "code": "CDA4101",
+      "name": "Computer Organization and Design",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "any",
+        "courses": ["CET1112C", "CET3116"]
+      }
+    },
+    {
+      "code": "CEN4801",
+      "name": "Systems Integration",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "all",
+        "courses": ["COP4708", "COP3530"]
+      }
+    },
+    {
+      "code": "CEN4010",
+      "name": "Software Engineering",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "all",
+        "courses": ["COP3530"]
+      }
+    },
+    {
+      "code": "COP4813",
+      "name": "Web Systems I",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "all",
+        "courses": ["COP3530"]
+      }
+    },
+    {
+      "code": "CIS4510",
+      "name": "IT Project Management",
+      "category": "bsit-core",
+      "prerequisites": {
+        "type": "all",
+        "courses": ["CEN4801"]
+      }
+    },
+    {
+      "code": "COP4834",
+      "name": "Web Systems II",
+      "category": "technical-elective",
+      "prerequisites": {
+        "type": "none_listed"
+      },
+      "notes": "Web Systems track course. COP3530 is listed as a track course, not as a direct prerequisite on the supplied sheet."
+    },
+    {
+      "code": "COP4709",
+      "name": "Applied Database II",
+      "category": "technical-elective",
+      "prerequisites": {
+        "type": "none_listed"
+      }
+    },
+    {
+      "code": "CET4860",
+      "name": "Introduction to Digital Forensics",
+      "category": "technical-elective",
+      "prerequisites": {
+        "type": "all",
+        "courses": ["CIS4360"]
+      }
+    },
+    {
+      "code": "CET4861",
+      "name": "Advanced Digital Forensics",
+      "category": "technical-elective",
+      "prerequisites": {
+        "type": "all",
+        "courses": ["CET4860"]
+      }
+    },
+    {
+      "code": "CET4862",
+      "name": "Network Forensics & Incident Response",
+      "category": "technical-elective",
+      "prerequisites": {
+        "type": "all",
+        "courses": ["CIS4360"]
+      }
+    },
+    {
+      "code": "CET4884",
+      "name": "Security Methods and Practice",
+      "category": "technical-elective",
+      "prerequisites": {
+        "type": "any",
+        "courses": ["GEB3213", "ENC2210"]
+      }
+    },
+    {
+      "code": "ENC1101",
+      "name": "English Composition I",
+      "category": "supporting-prerequisite",
+      "prerequisites": {
+        "type": "none_listed"
+      },
+      "notes": "Included because it is referenced as a prerequisite for GEB3213."
+    },
+    {
+      "code": "CET1600",
+      "name": "Course title not provided",
+      "category": "supporting-prerequisite",
+      "prerequisites": {
+        "type": "none_listed"
+      },
+      "notes": "Included because it is referenced as a prerequisite option for CIS4360. The course title was not provided in the source list."
+    },
+    {
+      "code": "ENC2210",
+      "name": "Course title not provided",
+      "category": "supporting-prerequisite",
+      "prerequisites": {
+        "type": "none_listed"
+      },
+      "notes": "Included because it is referenced as a prerequisite option for CET4884. The course title was not provided in the source list."
+    }
+  ],
+  "electiveRequirements": {
+    "category": "technical-elective",
+    "requiredCourses": 1,
+    "requiredCreditHours": 3,
+    "notes": "Students select one upper-level technical elective."
+  },
+  "certificateTracks": [
+    {
+      "name": "Web Systems Software Development",
+      "courses": [
+        "COP4813",
+        "COP4708",
+        "COP4834",
+        "COP4709",
+        "COP3530",
+        "CEN3722",
+        "CIS4510"
+      ],
+      "notes": "The certificate courses use the same prerequisite requirements listed in the main course data."
+    },
+    {
+      "name": "Cybersecurity & Cyberforensics",
+      "courses": [
+        "CET4860",
+        "CET4861",
+        "CET4862",
+        "CTS3348",
+        "CIS4360",
+        "CET4884"
+      ],
+      "notes": "The certificate courses use the same prerequisite requirements listed in the main course data."
+    }
+  ],
+  "programNotes": [
+    {
+      "title": "General Education Requirements",
+      "description": "Students need an AA from an accredited Florida state school, two semesters of foreign language, and the Florida Civics Literacy course and exam."
+    },
+    {
+      "title": "Lower-Level Technical Electives",
+      "description": "Students must complete 44 approved hours."
+    },
+    {
+      "title": "Prerequisite Source",
+      "description": "Prerequisite requirements are based on the supplied 2025-2026 BSIT degree planner. 'None listed' means the source sheet did not specify a prerequisite; it does not guarantee that no other enrollment restrictions exist."
+    }
+  ]
+}
