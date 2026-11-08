@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="Assignment 11 - Dynamic BSIT Course Advisor using JavaScript and JSON.">
+
+    <title>Assignment 11 - Dynamic Objects | COP4813</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Anthony Pilla</h1>
+        <p>COP 4813 - Web Systems</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="assignments.html">My Assignments</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+    </header>
+
+    <main class="assignment-page">
+
+        <h2>Assignment 11 - Dynamic Objects</h2>
+
+        <section class="advisor-intro">
+            <h2>BSIT Course Advisor</h2>
+
+            <p>
+                Welcome to the Daytona State College Bachelor of Science in
+                Information Technology (BSIT) Course Advisor. This tool helps
+                students track completed courses, identify courses they are
+                eligible to take, and create a semester course plan.
+            </p>
+
+            <p>
+                Select the courses you have already completed to see which
+                courses are available based on their prerequisite requirements.
+            </p>
+
+            <p>
+                <strong>Program:</strong> Bachelor of Science in Information
+                Technology (BSIT)
+                <br>
+                <strong>Catalog Year:</strong> 2026-2027
+                <br>
+                <strong>College:</strong> Daytona State College
+            </p>
+
+            <p>
+                <a href="https://daytonastate.smartcatalogiq.com/en/2026-2027/college-catalog/program-guides/bs-degree/information-technology-bsit-b-s-degree"
+                   target="_blank" rel="noopener">
+                    View Official BSIT Program Guide
+                </a>
+            </p>
+        </section>
+
+        <section class="advisor-progress">
+            <h2>My Academic Progress</h2>
+
+            <p>
+                Mark the courses you have already completed. Your available
+                courses will update based on your selections.
+            </p>
+
+            <div id="completedCourses">
+                <!-- Completed course selections will be generated here. -->
+            </div>
+
+            <p id="progressMessage" role="status" aria-live="polite">
+                No courses have been marked as completed.
+            </p>
+        </section>
+
+        <section class="advisor-courses">
+            <h2>Available Courses</h2>
+
+            <p>
+                The courses below will be generated based on the BSIT program
+                data. Courses will become available when their prerequisites
+                have been satisfied.
+            </p>
+
+            <div id="courseList">
+                <!-- Course cards will be dynamically generated here. -->
+            </div>
+        </section>
+
+        <section class="advisor-plan">
+            <h2>My Course Plan</h2>
+
+            <p>
+                Add eligible courses to your plan to organize your upcoming
+                semester. You can also remove courses from your plan.
+            </p>
+
+            <div class="semester-plan">
+                <h3>Fall Semester</h3>
+
+                <div id="fallCourses" class="semester-courses">
+                    <!-- Planned courses will appear here. -->
+                    <p>No courses added yet.</p>
+                </div>
+            </div>
+
+            <div class="semester-plan">
+                <h3>Spring Semester</h3>
+
+                <div id="springCourses" class="semester-courses">
+                    <!-- Planned courses will appear here. -->
+                    <p>No courses added yet.</p>
+                </div>
+            </div>
+
+            <p id="planMessage" role="status" aria-live="polite">
+                Your course plan is currently empty.
+            </p>
+        </section>
+
+        <section class="advisor-notes">
+            <h2>Course Information and Prerequisite Notes</h2>
+
+            <p>
+                Select a course to view its description, credit hours,
+                prerequisite requirements, and any additional enrollment notes.
+            </p>
+
+            <div id="courseInformation">
+                <p>Select a course to view more information.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Created by Anthony Pilla</p>
+    </footer>
+
+    <script src="assignment11.js"></script>
+
+</body>
+</html>
