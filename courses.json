@@ -55,7 +55,7 @@
       "prerequisites": {
         "type": "none_listed"
       },
-      "notes": "Listed as a preferred course."
+      
     },
     {
       "code": "STA2023",
@@ -72,7 +72,7 @@
       "prerequisites": {
         "type": "none_listed"
       },
-      "notes": "Listed as a preferred course."
+      
     },
     {
       "code": "MAD2104",
@@ -121,7 +121,7 @@
       "prerequisites": {
         "type": "none_listed"
       },
-      "notes": "Listed as a preferred course."
+      
     },
     {
       "code": "CET1112C",
@@ -138,7 +138,7 @@
       "prerequisites": {
         "type": "none_listed"
       },
-      "notes": "Listed as a preferred course."
+      
     },
     {
       "code": "EET3085",
@@ -214,7 +214,7 @@
           "EGN2045"
         ]
       },
-      "notes": "The source sheet specifies MAC1105 or higher. The listed mathematics courses are represented here as the available options for that requirement."
+     
     },
     {
       "code": "CEN3722",
@@ -349,7 +349,7 @@
       "prerequisites": {
         "type": "none_listed"
       },
-      "notes": "Web Systems track course. COP3530 is listed as a track course, not as a direct prerequisite on the supplied sheet."
+      
     },
     {
       "code": "COP4709",
@@ -402,7 +402,7 @@
       "prerequisites": {
         "type": "none_listed"
       },
-      "notes": "Included because it is referenced as a prerequisite for GEB3213."
+     
     },
     {
       "code": "CET1600",
@@ -411,7 +411,7 @@
       "prerequisites": {
         "type": "none_listed"
       },
-      "notes": "Included because it is referenced as a prerequisite option for CIS4360. The course title was not provided in the source list."
+      
     },
     {
       "code": "ENC2210",
@@ -420,14 +420,14 @@
       "prerequisites": {
         "type": "none_listed"
       },
-      "notes": "Included because it is referenced as a prerequisite option for CET4884. The course title was not provided in the source list."
+      
     }
   ],
   "electiveRequirements": {
     "category": "technical-elective",
     "requiredCourses": 1,
     "requiredCreditHours": 3,
-    "notes": "Students select one upper-level technical elective."
+    
   },
   "certificateTracks": [
     {
@@ -441,7 +441,7 @@
         "CEN3722",
         "CIS4510"
       ],
-      "notes": "The certificate courses use the same prerequisite requirements listed in the main course data."
+      
     },
     {
       "name": "Cybersecurity & Cyberforensics",
@@ -453,7 +453,7 @@
         "CIS4360",
         "CET4884"
       ],
-      "notes": "The certificate courses use the same prerequisite requirements listed in the main course data."
+      
     }
   ],
   "programNotes": [
