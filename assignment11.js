@@ -87,8 +87,8 @@ function checkPrerequisites(requirement) {
 // Create a readable explanation of prerequisite requirements.
 function getPrerequisiteDescription(requirement) {
     if (!requirement || requirement.type === "none_listed") {
-        return "No prerequisites were listed in the supplied degree planner.";
-    }
+    return "No prerequisites required.";
+}
 
     if (requirement.courses) {
         const names = requirement.courses.map(code => {
