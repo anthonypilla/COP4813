@@ -1027,3 +1027,288 @@ footer p {
         height: 600px;
     }
 }
+
+
+/* =========================================
+   Assignment 11 - Dynamic BSIT Course Advisor
+========================================= */
+
+/* Main advisor sections */
+
+.advisor-intro,
+.advisor-progress,
+.advisor-courses,
+.advisor-plan,
+.advisor-notes {
+    width: 100%;
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #d6e2ed;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.advisor-intro h2,
+.advisor-progress h2,
+.advisor-courses h2,
+.advisor-plan h2,
+.advisor-notes h2 {
+    color: #17365d;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.advisor-intro p,
+.advisor-progress p,
+.advisor-courses p,
+.advisor-plan p,
+.advisor-notes p {
+    line-height: 1.6;
+}
+
+/* Official program guide link */
+
+.advisor-intro a {
+    color: #0878d1;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.advisor-intro a:hover {
+    text-decoration: underline;
+}
+
+/* Completed course selection */
+
+#completedCourses h3 {
+    margin-top: 25px;
+    padding-bottom: 8px;
+    color: #17365d;
+    border-bottom: 2px solid #2496FF;
+}
+
+.completed-course-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.completed-course-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    background-color: #edf5fc;
+    border: 1px solid #c5d9e8;
+    border-radius: 6px;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.completed-course-option:hover {
+    background-color: #e0effc;
+}
+
+.completed-course-option input {
+    margin-top: 3px;
+    accent-color: #2496FF;
+    cursor: pointer;
+}
+
+/* Academic progress message */
+
+#progressMessage {
+    margin-top: 20px;
+    padding: 12px;
+    color: #17365d;
+    background-color: #e8f3ff;
+    border-left: 5px solid #2496FF;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Available course cards */
+
+#courseList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.advisor-course-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f4f8fc;
+    border: 1px solid #c5d9e8;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.advisor-course-card h3 {
+    margin-top: 0;
+    color: #17365d;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.advisor-course-card p {
+    margin: 7px 0;
+}
+
+/* Course availability status */
+
+.course-status {
+    width: 100%;
+    padding: 9px;
+    box-sizing: border-box;
+    color: #17365d;
+    background-color: #e2efff;
+    border-left: 4px solid #2496FF;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.missing-prerequisites {
+    color: #9a3c24;
+    font-size: 0.95rem;
+}
+
+/* Advisor buttons */
+
+.advisor-course-card button,
+.planned-course button {
+    margin-top: 10px;
+    padding: 9px 14px;
+    color: #ffffff;
+    background-color: #2496FF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.advisor-course-card button:hover,
+.planned-course button:hover {
+    background-color: #0878d1;
+}
+
+/* Semester course plans */
+
+.semester-plan {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f4f8fc;
+    border: 1px solid #c5d9e8;
+    border-radius: 8px;
+}
+
+.semester-plan h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    color: #17365d;
+    border-bottom: 2px solid #2496FF;
+}
+
+.semester-courses {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.planned-course {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background-color: #ffffff;
+    border: 1px solid #d6e2ed;
+    border-radius: 6px;
+}
+
+.planned-course span {
+    line-height: 1.5;
+}
+
+.planned-course button {
+    flex-shrink: 0;
+    margin-top: 0;
+    background-color: #c0392b;
+}
+
+.planned-course button:hover {
+    background-color: #962d22;
+}
+
+/* Course plan status message */
+
+#planMessage {
+    margin-top: 20px;
+    padding: 12px;
+    color: #17365d;
+    background-color: #e8f3ff;
+    border-left: 5px solid #2496FF;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Course information */
+
+#courseInformation {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f4f8fc;
+    border: 1px solid #c5d9e8;
+    border-radius: 8px;
+}
+
+#courseInformation h3 {
+    color: #17365d;
+    margin-top: 0;
+}
+
+#courseInformation h4 {
+    margin-bottom: 8px;
+    color: #245b91;
+}
+
+/* Mobile responsive layout */
+
+@media (max-width: 700px) {
+    .advisor-intro,
+    .advisor-progress,
+    .advisor-courses,
+    .advisor-plan,
+    .advisor-notes {
+        padding: 16px;
+        margin: 18px auto;
+    }
+
+    .completed-course-group,
+    #courseList {
+        grid-template-columns: 1fr;
+    }
+
+    .planned-course {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .planned-course button {
+        width: 100%;
+    }
+
+    .advisor-course-card {
+        padding: 16px;
+    }
+}
+
