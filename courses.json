@@ -1,3 +1,4 @@
+
 {
   "program": {
     "name": "Bachelor of Science in Information Technology",
@@ -54,8 +55,7 @@
       "category": "lower-level",
       "prerequisites": {
         "type": "none_listed"
-      },
-      
+      }
     },
     {
       "code": "STA2023",
@@ -71,8 +71,7 @@
       "category": "lower-level",
       "prerequisites": {
         "type": "none_listed"
-      },
-      
+      }
     },
     {
       "code": "MAD2104",
@@ -120,8 +119,7 @@
       "category": "lower-level",
       "prerequisites": {
         "type": "none_listed"
-      },
-      
+      }
     },
     {
       "code": "CET1112C",
@@ -137,8 +135,7 @@
       "category": "lower-level",
       "prerequisites": {
         "type": "none_listed"
-      },
-      
+      }
     },
     {
       "code": "EET3085",
@@ -213,8 +210,7 @@
           "MAC2311C",
           "EGN2045"
         ]
-      },
-     
+      }
     },
     {
       "code": "CEN3722",
@@ -348,8 +344,7 @@
       "category": "technical-elective",
       "prerequisites": {
         "type": "none_listed"
-      },
-      
+      }
     },
     {
       "code": "COP4709",
@@ -401,33 +396,29 @@
       "category": "supporting-prerequisite",
       "prerequisites": {
         "type": "none_listed"
-      },
-     
+      }
     },
     {
       "code": "CET1600",
-      "name": "Course title not provided",
+      "name": "CET1600",
       "category": "supporting-prerequisite",
       "prerequisites": {
         "type": "none_listed"
-      },
-      
+      }
     },
     {
       "code": "ENC2210",
-      "name": "Course title not provided",
+      "name": "ENC2210",
       "category": "supporting-prerequisite",
       "prerequisites": {
         "type": "none_listed"
-      },
-      
+      }
     }
   ],
   "electiveRequirements": {
     "category": "technical-elective",
     "requiredCourses": 1,
-    "requiredCreditHours": 3,
-    
+    "requiredCreditHours": 3
   },
   "certificateTracks": [
     {
@@ -440,8 +431,7 @@
         "COP3530",
         "CEN3722",
         "CIS4510"
-      ],
-      
+      ]
     },
     {
       "name": "Cybersecurity & Cyberforensics",
@@ -452,8 +442,7 @@
         "CTS3348",
         "CIS4360",
         "CET4884"
-      ],
-      
+      ]
     }
   ],
   "programNotes": [
@@ -464,10 +453,6 @@
     {
       "title": "Lower-Level Technical Electives",
       "description": "Students must complete 44 approved hours."
-    },
-    {
-      "title": "Prerequisite Source",
-      "description": "Prerequisite requirements are based on the supplied 2025-2026 BSIT degree planner. 'None listed' means the source sheet did not specify a prerequisite; it does not guarantee that no other enrollment restrictions exist."
     }
   ]
 }
