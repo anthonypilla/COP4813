@@ -85,35 +85,43 @@ function checkPrerequisites(requirement) {
 }
 
 // Create a readable explanation of prerequisite requirements.
-function getPrerequisiteDescription(requirement) {
+function getPrerequisiteDescription(requirement, parentType = null) {
     if (!requirement || requirement.type === "none_listed") {
-    return "No prerequisites required.";
-}
+        return "No prerequisites required.";
+    }
 
-    if (requirement.courses) {
-        const names = requirement.courses.map(code => {
-            const course = findCourse(code);
-            return course ? `${code} - ${course.name}` : code;
-        });
+    let description = "";
 
-        if (requirement.type === "all") {
-            return names.join(" AND ");
+    if (requirement.type === "all") {
+        if (requirement.groups) {
+            description = requirement.groups
+                .map(group => getPrerequisiteDescription(group, "all"))
+                .join(" AND ");
+        } else {
+            description = requirement.courses
+                .map(code => {
+                    const course = findCourse(code);
+                    return course ? `${course.code} - ${course.name}` : code;
+                })
+                .join(" AND ");
         }
-
-        return "(" + names.join(" OR ") + ")";
     }
 
-    if (requirement.groups) {
-        const descriptions = requirement.groups.map(group =>
-            "(" + getPrerequisiteDescription(group) + ")"
-        );
-
-        return descriptions.join(
-            requirement.type === "all" ? " AND " : " OR "
-        );
+    if (requirement.type === "any") {
+        description = requirement.courses
+            .map(code => {
+                const course = findCourse(code);
+                return course ? `${course.code} - ${course.name}` : code;
+            })
+            .join(" OR ");
     }
 
-    return "Prerequisite information unavailable.";
+    // Add parentheses when an OR group is part of an AND requirement.
+    if (parentType === "all" && requirement.type === "any") {
+        return `(${description})`;
+    }
+
+    return description;
 }
 
 // Identify which prerequisites are still missing.
