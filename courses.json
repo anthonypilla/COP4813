@@ -343,7 +343,8 @@
       "name": "Web Systems II",
       "category": "technical-elective",
       "prerequisites": {
-        "type": "none_listed"
+        "type": "all"
+        "courses": ["COP4813"]
       }
     },
     {
@@ -351,7 +352,8 @@
       "name": "Applied Database II",
       "category": "technical-elective",
       "prerequisites": {
-        "type": "none_listed"
+        "type": "all"
+        "courses": ["COP4708"]
       }
     },
     {
