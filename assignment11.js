@@ -272,6 +272,18 @@ function displayAvailableCourses() {
         }
 
         card.appendChild(status);
+            
+            // Display all prerequisite requirements under the course.
+            const prerequisiteHeading = document.createElement("strong");
+            prerequisiteHeading.textContent = "Prerequisites:";
+            card.appendChild(prerequisiteHeading);
+            
+            const prerequisiteText = document.createElement("p");
+            prerequisiteText.className = "course-prerequisites";
+            prerequisiteText.textContent =
+                getPrerequisiteDescription(course.prerequisites);
+            
+            card.appendChild(prerequisiteText);
 
         // Show missing prerequisite information for unavailable courses.
         if (!eligible && !isCompleted) {
@@ -285,6 +297,7 @@ function displayAvailableCourses() {
                 "Still needed: " + missing.join(", ");
 
             card.appendChild(missingText);
+            
         }
 
         // Display preferred-course notes when available.
