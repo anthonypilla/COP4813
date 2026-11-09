@@ -395,7 +395,7 @@
     {
       "code": "ENC1101",
       "name": "English Composition I",
-      "category": "supporting-prerequisite",
+      "category": "lower-level",
       "prerequisites": {
         "type": "none_listed"
       }
@@ -403,7 +403,7 @@
     {
       "code": "CET1600",
       "name": "Network Plus",
-      "category": "supporting-prerequisite",
+      "category": "lower-level",
       "prerequisites": {
         "type": "none_listed"
       }
@@ -411,7 +411,7 @@
     {
       "code": "ENC2210",
       "name": "Report Writing",
-      "category": "supporting-prerequisite",
+      "category": "lower-level",
       "prerequisites": {
         "type": "none_listed"
       }
