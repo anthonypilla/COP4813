@@ -1,1 +1,204 @@
 
+{
+    "cmsSystems": [
+        {
+            "system": "WordPress",
+            "support": "Open-source software developed by the WordPress project and supported by the WordPress community. Licensed under GPL. Hosting is available through many hosting companies.",
+            "technology": "Server: PHP. Database: MySQL or MariaDB. Client side: HTML, CSS, and JavaScript. Common web servers include Apache and Nginx.",
+            "capabilities": [
+                "Thousands of themes for customizing website appearance.",
+                "Thousands of plugins for adding features.",
+                "Built-in blogging and page publishing tools.",
+                "Custom post types and content management.",
+                "User roles and permissions.",
+                "REST API for external applications and integrations."
+            ],
+            "limitations": [
+                "Requires hosting and ongoing maintenance for self-hosted installations.",
+                "Plugins and themes can introduce security vulnerabilities.",
+                "Updates may cause compatibility problems between plugins and themes.",
+                "Advanced customization may require PHP and web development knowledge."
+            ],
+            "exampleSite": {
+                "name": "TechCrunch",
+                "url": "https://techcrunch.com/"
+            },
+            "sources": [
+                {
+                    "name": "WordPress Features",
+                    "url": "https://wordpress.org/about/features/"
+                },
+                {
+                    "name": "WordPress Requirements",
+                    "url": "https://wordpress.org/about/requirements/"
+                },
+                {
+                    "name": "WordPress Security",
+                    "url": "https://wordpress.org/about/security/"
+                }
+            ]
+        },
+        {
+            "system": "Shopify",
+            "support": "Commercial hosted e-commerce platform developed and operated by Shopify Inc. It is a subscription-based service that includes website hosting and platform maintenance.",
+            "technology": "Hosted cloud platform with a proprietary server and database infrastructure. Storefronts use HTML, CSS, JavaScript, and Shopify's Liquid templating language. Supports APIs and integrations.",
+            "capabilities": [
+                "Online store creation and product management.",
+                "Built-in shopping cart and checkout system.",
+                "Payment processing and order management.",
+                "Customizable themes and templates.",
+                "App Store for adding additional features.",
+                "Inventory, shipping, and sales management.",
+                "APIs for connecting external applications."
+            ],
+            "limitations": [
+                "Requires a paid subscription for most full store functionality.",
+                "Transaction and payment processing fees may apply.",
+                "Some advanced features require paid third-party applications.",
+                "Less control over server infrastructure than self-hosted CMS platforms.",
+                "Moving a store to another platform may require significant data migration."
+            ],
+            "exampleSite": {
+                "name": "Allbirds",
+                "url": "https://www.allbirds.com/"
+            },
+            "sources": [
+                {
+                    "name": "Shopify Platform",
+                    "url": "https://www.shopify.com/"
+                },
+                {
+                    "name": "Shopify Developer Documentation",
+                    "url": "https://shopify.dev/docs"
+                },
+                {
+                    "name": "Shopify Theme Architecture",
+                    "url": "https://shopify.dev/docs/storefronts/themes/architecture"
+                }
+            ]
+        },
+        {
+            "system": "Wix",
+            "support": "Commercial hosted website-building and CMS platform developed and operated by Wix.com Ltd. Offers free and paid plans with hosting included.",
+            "technology": "Proprietary cloud-based platform. Client side uses HTML, CSS, and JavaScript. Wix development tools support JavaScript and TypeScript, with managed Node.js backend environments for supported site types. Database and hosting infrastructure are managed by Wix.",
+            "capabilities": [
+                "Drag-and-drop visual website editor.",
+                "Large collection of customizable templates.",
+                "Wix App Market for adding extensions and integrations.",
+                "Built-in hosting and website security.",
+                "E-commerce, appointment booking, and business management tools.",
+                "SEO and website analytics tools.",
+                "Developer tools for custom functionality."
+            ],
+            "limitations": [
+                "Less control over server infrastructure and backend configuration.",
+                "Advanced development may require learning Wix-specific tools and APIs.",
+                "Some applications and business features require paid plans.",
+                "Moving a website to another hosting platform can be difficult.",
+                "Some advanced customizations are restricted by the platform."
+            ],
+            "exampleSite": {
+                "name": "Dopple Press",
+                "url": "https://dopplepress.com/"
+            },
+            "sources": [
+                {
+                    "name": "Wix Website Builder",
+                    "url": "https://www.wix.com/website-builder"
+                },
+                {
+                    "name": "Wix Developer Documentation",
+                    "url": "https://dev.wix.com/docs"
+                },
+                {
+                    "name": "Wix Website Examples",
+                    "url": "https://www.wix.com/explore/websites"
+                }
+            ]
+        },
+        {
+            "system": "Squarespace",
+            "support": "Commercial hosted website-building and CMS platform developed and operated by Squarespace, Inc. Subscription plans include hosting, maintenance, and security.",
+            "technology": "Proprietary cloud-hosted platform. Client side uses HTML, CSS, and JavaScript. Server-side processing, databases, and hosting infrastructure are managed by Squarespace rather than exposed to customers.",
+            "capabilities": [
+                "Professionally designed templates.",
+                "Visual website editor with customizable layouts.",
+                "Built-in blogging and content publishing.",
+                "E-commerce and online payment tools.",
+                "SEO and website analytics.",
+                "Built-in hosting and SSL security.",
+                "Scheduling, marketing, and membership features."
+            ],
+            "limitations": [
+                "Requires a paid subscription for most full functionality.",
+                "Less flexibility for advanced server-side programming.",
+                "Fewer customization options than open-source platforms such as WordPress and Drupal.",
+                "Some integrations and advanced features may require additional services.",
+                "Moving a website to another platform may require rebuilding certain features."
+            ],
+            "exampleSite": {
+                "name": "Sam Fresquez",
+                "url": "https://samfresquez.com/"
+            },
+            "sources": [
+                {
+                    "name": "Squarespace Website Platform",
+                    "url": "https://www.squarespace.com/websites"
+                },
+                {
+                    "name": "Squarespace FAQ",
+                    "url": "https://www.squarespace.com/about/faq"
+                },
+                {
+                    "name": "Squarespace Website Showcase",
+                    "url": "https://www.squarespace.com/showcase"
+                }
+            ]
+        },
+        {
+            "system": "Drupal",
+            "support": "Free, open-source CMS developed by the Drupal community and supported by the Drupal Association. Licensed under GPL. Hosting is provided by independent hosting companies.",
+            "technology": "Server: PHP. Database: MySQL, MariaDB, PostgreSQL, or SQLite. Web servers include Apache and Nginx. Client side uses HTML, CSS, and JavaScript.",
+            "capabilities": [
+                "Thousands of contributed modules and extensions.",
+                "Customizable themes and templates.",
+                "Advanced content types and structured content management.",
+                "Detailed user roles and permissions.",
+                "Multilingual content management.",
+                "Content workflows and publishing controls.",
+                "API-first and headless CMS capabilities.",
+                "Suitable for large and complex websites."
+            ],
+            "limitations": [
+                "Steeper learning curve than many visual website builders.",
+                "Advanced customization often requires PHP and development knowledge.",
+                "Configuration and maintenance can be complex.",
+                "Module and version compatibility must be managed.",
+                "Hosting, updates, and ongoing security maintenance require attention."
+            ],
+            "exampleSite": {
+                "name": "City of Boston",
+                "url": "https://www.boston.gov/"
+            },
+            "sources": [
+                {
+                    "name": "What Is Drupal?",
+                    "url": "https://www.drupal.org/what-is-drupal"
+                },
+                {
+                    "name": "Drupal User Guide",
+                    "url": "https://www.drupal.org/docs/user_guide/en/understanding-drupal.html"
+                },
+                {
+                    "name": "Drupal Modules",
+                    "url": "https://www.drupal.org/project/project_module"
+                },
+                {
+                    "name": "Drupal Case Studies",
+                    "url": "https://new.drupal.org/case-studies"
+                }
+            ]
+        }
+    ]
+}
+
