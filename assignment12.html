@@ -1,1 +1,75 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A comparison of five content management systems: WordPress, Shopify, Wix, Squarespace, and Drupal.">
+    <title>Assignment 12 - CMS Review</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="assignment12.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Anthony Pilla</h1>
+        <p>COP 4813 - Web Systems</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="assignments.html">My Assignments</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cms-intro">
+            <h2>Assignment 12 - CMS Review</h2>
+
+            <p>
+                This page compares five content management systems (CMS)
+                by examining their support, technology, capabilities,
+                limitations, and example websites.
+            </p>
+
+            <p>
+                The five systems included in this comparison are
+                WordPress, Shopify, Wix, Squarespace, and Drupal.
+            </p>
+        </section>
+
+        <section class="cms-comparison">
+            <h2>Content Management System Comparison</h2>
+
+            <p id="tableStatus" aria-live="polite">
+                Loading CMS information...
+            </p>
+
+            <div class="cms-table-container">
+                <table id="cmsTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">System</th>
+                            <th scope="col">Produced/Sold By</th>
+                            <th scope="col">Technology Base</th>
+                            <th scope="col">Major Capabilities</th>
+                            <th scope="col">Major Limitations</th>
+                            <th scope="col">Example Site</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="cmsTableBody">
+                        <!-- CMS information will be generated from cms.json -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by Anthony Pilla</p>
+    </footer>
+
+</body>
+</html>
+
