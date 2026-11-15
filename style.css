@@ -1312,3 +1312,142 @@ footer p {
     }
 }
 
+
+/* ==============================
+   Assignment 12 - CMS Review
+   ============================== */
+
+.cms-intro,
+.cms-comparison {
+    background-color: #ffffff;
+    padding: 25px;
+    margin: 25px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cms-intro h2,
+.cms-comparison h2 {
+    color: #2496FF;
+    margin-top: 0;
+}
+
+.cms-intro p {
+    line-height: 1.6;
+}
+
+/* CMS Table Container */
+
+.cms-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* CMS Comparison Table */
+
+#cmsTable {
+    width: 100%;
+    min-width: 1100px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+#cmsTable th {
+    background-color: #2496FF;
+    color: #ffffff;
+    padding: 15px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+#cmsTable td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #dddddd;
+    vertical-align: top;
+    line-height: 1.6;
+}
+
+#cmsTable tbody tr:nth-child(even) {
+    background-color: #f4f7fa;
+}
+
+#cmsTable tbody tr:hover {
+    background-color: #eaf4ff;
+}
+
+#cmsTable td:first-child {
+    font-weight: bold;
+    color: #1b3b5a;
+    min-width: 100px;
+}
+
+/* Capabilities and Limitations Lists */
+
+#cmsTable ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+#cmsTable li {
+    margin-bottom: 7px;
+}
+
+/* Example Website and Research Links */
+
+#cmsTable a {
+    color: #0879d1;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#cmsTable a:hover {
+    text-decoration: underline;
+}
+
+#cmsTable h4 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #333333;
+}
+
+/* Loading and Status Message */
+
+#tableStatus {
+    color: #555555;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Mobile Layout */
+
+@media screen and (max-width: 700px) {
+
+    .cms-intro,
+    .cms-comparison {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .cms-intro h2,
+    .cms-comparison h2 {
+        font-size: 1.3rem;
+    }
+
+    .cms-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #cmsTable {
+        min-width: 1100px;
+        font-size: 13px;
+    }
+
+    #cmsTable th,
+    #cmsTable td {
+        padding: 10px;
+    }
+}
