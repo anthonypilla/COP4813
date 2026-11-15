@@ -160,42 +160,32 @@
             "support": "Free, open-source CMS developed by the Drupal community and supported by the Drupal Association. Licensed under GPL. Hosting is provided by independent hosting companies.",
             "technology": "Server: PHP. Database: MySQL, MariaDB, PostgreSQL, or SQLite. Web servers include Apache and Nginx. Client side uses HTML, CSS, and JavaScript.",
             "capabilities": [
-                "Thousands of contributed modules and extensions.",
-                "Customizable themes and templates.",
-                "Advanced content types and structured content management.",
-                "Detailed user roles and permissions.",
-                "Multilingual content management.",
-                "Content workflows and publishing controls.",
-                "API-first and headless CMS capabilities.",
-                "Suitable for large and complex websites."
+                "Very customizable and flexible, with thousands of modules and themes.",
+                "Strong security feautures such as, strong access control, user permissions, and CAPTCHA.",
+                "The ability to handle large scaling websites with heavy traffic.",
+                "Great content management and organization, handles complex content well.",
+                "Active community and ecosystem constant changes and improvements being made."
             ],
             "limitations": [
                 "Steeper learning curve than many visual website builders.",
-                "Advanced customization often requires PHP and development knowledge.",
-                "Configuration and maintenance can be complex.",
-                "Module and version compatibility must be managed.",
+                "Higher development and maintenance costs",
+                "With many customization options enabled can cause significant performance drawbacks.",
+                "Less user-friendly UI than competitors.",
                 "Hosting, updates, and ongoing security maintenance require attention."
             ],
             "exampleSite": {
-                "name": "City of Boston",
-                "url": "https://www.boston.gov/"
+                "name": "Tesla",
+                "url": "https://www.tesla.com/"
             },
             "sources": [
                 {
                     "name": "What Is Drupal?",
                     "url": "https://www.drupal.org/what-is-drupal"
                 },
+                
                 {
-                    "name": "Drupal User Guide",
-                    "url": "https://www.drupal.org/docs/user_guide/en/understanding-drupal.html"
-                },
-                {
-                    "name": "Drupal Modules",
-                    "url": "https://www.drupal.org/project/project_module"
-                },
-                {
-                    "name": "Drupal Case Studies",
-                    "url": "https://new.drupal.org/case-studies"
+                    "name": "Advantages and Disadvantages of Drupal",
+                    "url": "https://www.cantech.in/blog/advantages-and-disadvantages-of-drupal/"
                 }
             ]
         }
