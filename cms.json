@@ -43,20 +43,20 @@
             "support": "Commercial hosted e-commerce platform developed and operated by Shopify Inc. It is a subscription-based service that includes website hosting and platform maintenance.",
             "technology": "Hosted cloud platform with a proprietary server and database infrastructure. Storefronts use HTML, CSS, JavaScript, and Shopify's Liquid templating language. Supports APIs and integrations.",
             "capabilities": [
-                "Online store creation and product management.",
+                "Easy to setup.",
                 "Built-in shopping cart and checkout system.",
-                "Payment processing and order management.",
+                "Scales from small business to large business very well.",
                 "Customizable themes and templates.",
                 "App Store for adding additional features.",
-                "Inventory, shipping, and sales management.",
                 "APIs for connecting external applications."
             ],
             "limitations": [
                 "Requires a paid subscription for most full store functionality.",
-                "Transaction and payment processing fees may apply.",
-                "Some advanced features require paid third-party applications.",
+                "Transaction and payment processing fees apply when not using Shopify Payments.",
+                "Very limited blogging tools",
                 "Less control over server infrastructure than self-hosted CMS platforms.",
-                "Moving a store to another platform may require significant data migration."
+                "Premium themes can be costly.",
+                "Moving a store to another platform could require significant data migration."
             ],
             "exampleSite": {
                 "name": "Allbirds",
@@ -64,17 +64,14 @@
             },
             "sources": [
                 {
-                    "name": "Shopify Platform",
-                    "url": "https://www.shopify.com/"
+                    "name": "Forbes Shopify Review",
+                    "url": "https://www.forbes.com/advisor/business/software/shopify-review/"
                 },
                 {
-                    "name": "Shopify Developer Documentation",
-                    "url": "https://shopify.dev/docs"
-                },
-                {
-                    "name": "Shopify Theme Architecture",
-                    "url": "https://shopify.dev/docs/storefronts/themes/architecture"
+                    "name": "DoDropshipping Pros and Cons",
+                    "url": "https://dodropshipping.com/shopify-pros-and-cons/"
                 }
+                
             ]
         },
         {
