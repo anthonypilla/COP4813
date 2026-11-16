@@ -82,13 +82,13 @@
             "support": "Commercial hosted website-building and CMS platform developed and operated by Wix.com Ltd. Offers free and paid plans with hosting included.",
             "technology": "Proprietary cloud-based platform. Client side uses HTML, CSS, and JavaScript. Wix development tools support JavaScript and TypeScript, with managed Node.js backend environments for supported site types. Database and hosting infrastructure are managed by Wix.",
             "capabilities": [
-                "Drag-and-drop visual website editor.",
+                "Drag-and-drop visual website editor anyone could use.",
                 "Large collection of customizable templates.",
                 "Wix App Market for adding extensions and integrations.",
                 "Built-in hosting and website security.",
                 "E-commerce, appointment booking, and business management tools.",
-                "SEO and website analytics tools.",
-                "Developer tools for custom functionality."
+                "SEO and website analytics tools."
+            
             ],
             "limitations": [
                 "Less control over server infrastructure and backend configuration.",
@@ -103,17 +103,14 @@
             },
             "sources": [
                 {
-                    "name": "Wix Website Builder",
-                    "url": "https://www.wix.com/website-builder"
+                    "name": "Enzuzo Pros and Cons",
+                    "url": "https://www.enzuzo.com/blog/pros-and-cons-of-using-wix"
                 },
                 {
-                    "name": "Wix Developer Documentation",
-                    "url": "https://dev.wix.com/docs"
-                },
-                {
-                    "name": "Wix Website Examples",
-                    "url": "https://www.wix.com/explore/websites"
+                    "name": "Forbes Review",
+                    "url": "https://www.forbes.com/advisor/au/business/software/wix-review/"
                 }
+               
             ]
         },
         {
