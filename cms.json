@@ -121,19 +121,17 @@
             "support": "Commercial hosted website-building and CMS platform developed and operated by Squarespace, Inc. Subscription plans include hosting, maintenance, and security.",
             "technology": "Proprietary cloud-hosted platform. Client side uses HTML, CSS, and JavaScript. Server-side processing, databases, and hosting infrastructure are managed by Squarespace rather than exposed to customers.",
             "capabilities": [
-                "Professionally designed templates.",
-                "Visual website editor with customizable layouts.",
-                "Built-in blogging and content publishing.",
-                "E-commerce and online payment tools.",
-                "SEO and website analytics.",
-                "Built-in hosting and SSL security.",
-                "Scheduling, marketing, and membership features."
+                "Clean and professionally designed templates that follow modern design.",
+                "Streamlined setup and management.",
+                "Good performance when hosting on all plans.",
+                "Many tools to help grow your business.",
+                "Has a mobile app that provides the same experience as the desktop version."
             ],
             "limitations": [
-                "Requires a paid subscription for most full functionality.",
-                "Less flexibility for advanced server-side programming.",
-                "Fewer customization options than open-source platforms such as WordPress and Drupal.",
-                "Some integrations and advanced features may require additional services.",
+                "Templates can be too simple for specific design needs.",
+                "No free plan.",
+                "E-commerce tools are limited for larger businesses.",
+                "Simple SEO tools may not be enough for advanced users.",
                 "Moving a website to another platform may require rebuilding certain features."
             ],
             "exampleSite": {
@@ -142,16 +140,13 @@
             },
             "sources": [
                 {
-                    "name": "Squarespace Website Platform",
-                    "url": "https://www.squarespace.com/websites"
+                    "name": "Seospace Review",
+                    "url": "https://www.seospace.co/blog/squarespace-pros-and-cons"
                 },
+                
                 {
-                    "name": "Squarespace FAQ",
-                    "url": "https://www.squarespace.com/about/faq"
-                },
-                {
-                    "name": "Squarespace Website Showcase",
-                    "url": "https://www.squarespace.com/showcase"
+                    "name": "Network Solutions Pros/Cons of Squarespace",
+                    "url": "https://www.networksolutions.com/blog/pros-cons-squarespace/"
                 }
             ]
         },
