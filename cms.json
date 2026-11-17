@@ -6,36 +6,33 @@
             "support": "Open-source software developed by the WordPress project and supported by the WordPress community. Licensed under GPL. Hosting is available through many hosting companies.",
             "technology": "Server: PHP. Database: MySQL or MariaDB. Client side: HTML, CSS, and JavaScript. Common web servers include Apache and Nginx.",
             "capabilities": [
+                "Completely free and gives full control of your website.",
                 "Thousands of themes for customizing website appearance.",
-                "Thousands of plugins for adding features.",
                 "Built-in blogging and page publishing tools.",
                 "Custom post types and content management.",
-                "User roles and permissions.",
                 "REST API for external applications and integrations."
             ],
             "limitations": [
                 "Requires hosting and ongoing maintenance for self-hosted installations.",
                 "Plugins and themes can introduce security vulnerabilities.",
                 "Updates may cause compatibility problems between plugins and themes.",
-                "Advanced customization may require PHP and web development knowledge."
+                "Advanced customization may require deeper knowledge.",
+                "Not a drag and drop website builder"
             ],
             "exampleSite": {
-                "name": "TechCrunch",
-                "url": "https://techcrunch.com/"
+                "name": "Nasa",
+                "url": "https://www.nasa.gov/"
             },
             "sources": [
                 {
-                    "name": "WordPress Features",
-                    "url": "https://wordpress.org/about/features/"
+                    "name": "Wpbeginner",
+                    "url": "https://www.wpbeginner.com/opinion/the-ultimate-wordpress-review-is-it-the-best-choice-for-your-website/"
                 },
                 {
-                    "name": "WordPress Requirements",
-                    "url": "https://wordpress.org/about/requirements/"
-                },
-                {
-                    "name": "WordPress Security",
-                    "url": "https://wordpress.org/about/security/"
+                    "name": "Viralchilly Pros and Cons",
+                    "url": "https://viralchilly.com/blog/wordpress-pros-and-cons"
                 }
+                
             ]
         },
         {
