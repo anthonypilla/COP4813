@@ -237,9 +237,9 @@ function checkAnswer(selectedAnswer) {
             health + healthPerCorrectAnswer
         );
 
-        feedbackMessage.textContent =
-            `REPAIR SUCCESSFUL! +${pointsPerCorrectAnswer} points. Computer health restored by ${healthPerCorrectAnswer}%. ${challenge.explanation}`;
-
+       feedbackMessage.textContent =
+            `REPAIR FAILED! -${pointsPerIncorrectAnswer} points. Computer health decreased by ${healthLostPerIncorrectAnswer}%. 
+             The correct solution was: ${challenge.answers[challenge.correctAnswer]} ${challenge.explanation.replace("Correct! ", "")}`;
         feedbackMessage.className = "correct-feedback";
 
         statusMessage.textContent = "System repair successful.";
