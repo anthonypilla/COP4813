@@ -211,6 +211,7 @@ function displayChallenge() {
 
 
 // Check the selected answer.
+
 function checkAnswer(selectedAnswer) {
     if (answered) {
         return;
@@ -228,18 +229,16 @@ function checkAnswer(selectedAnswer) {
     });
 
     if (selectedAnswer === challenge.correctAnswer) {
-        // Correct repair.
+
+        // CORRECT ANSWER
         score += pointsPerCorrectAnswer;
         correctAnswers++;
 
-        health = Math.min(
-            100,
-            health + healthPerCorrectAnswer
-        );
+        health = Math.min(100, health + healthPerCorrectAnswer);
 
-       feedbackMessage.textContent =
-            `REPAIR FAILED! -${pointsPerIncorrectAnswer} points. Computer health decreased by ${healthLostPerIncorrectAnswer}%. 
-             The correct solution was: ${challenge.answers[challenge.correctAnswer]} ${challenge.explanation.replace("Correct! ", "")}`;
+        feedbackMessage.textContent =
+            `REPAIR SUCCESSFUL! +${pointsPerCorrectAnswer} points. Computer health restored by ${healthPerCorrectAnswer}%. ${challenge.explanation}`;
+
         feedbackMessage.className = "correct-feedback";
 
         statusMessage.textContent = "System repair successful.";
@@ -247,16 +246,17 @@ function checkAnswer(selectedAnswer) {
         answerButtons[selectedAnswer].classList.add("correct-answer");
 
     } else {
-        // Incorrect repair.
+
+        // INCORRECT ANSWER
         score -= pointsPerIncorrectAnswer;
 
-        health = Math.max(
-            0,
-            health - healthLostPerIncorrectAnswer
-        );
+        health = Math.max(0, health - healthLostPerIncorrectAnswer);
+
+        const correctSolution =
+            challenge.answers[challenge.correctAnswer];
 
         feedbackMessage.textContent =
-            `REPAIR FAILED! -${pointsPerIncorrectAnswer} points. Computer health decreased by ${healthLostPerIncorrectAnswer}%. ${challenge.explanation}`;
+            `REPAIR FAILED! -${pointsPerIncorrectAnswer} points. Computer health decreased by ${healthLostPerIncorrectAnswer}%. The correct solution was: ${correctSolution}. ${challenge.explanation.replace("Correct! ", "")}`;
 
         feedbackMessage.className = "incorrect-feedback";
 
@@ -270,7 +270,6 @@ function checkAnswer(selectedAnswer) {
 
     updateHealthDisplay();
 
-    // Check whether the computer has crashed.
     if (health <= 0) {
         displayResults(true);
         return;
@@ -284,6 +283,7 @@ function checkAnswer(selectedAnswer) {
         nextButton.textContent = "Next Challenge";
     }
 }
+
 
 
 // Move to the next challenge.
