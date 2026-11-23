@@ -1,1 +1,158 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Computer Crisis is an educational computer troubleshooting game where players diagnose and repair common computer problems.">
+    <title>Assignment 13 - Computer Crisis</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="assignment13.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Anthony Pilla</h1>
+        <p>COP 4813 - Web Systems</p>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="assignments.html">My Assignments</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+    </header>
+
+    <main class="computer-crisis">
+
+        <section class="game-intro">
+            <h2>Assignment 13 - Computer Crisis</h2>
+
+            <h3>Save the Computer!</h3>
+
+            <p>
+                Welcome to Computer Crisis! You are a computer technician
+                responsible for diagnosing and repairing computers that
+                have different technical problems.
+            </p>
+
+            <p>
+                Use your computer knowledge to identify each problem and
+                select the correct repair. Complete all five repair
+                challenges to earn the highest score possible.
+            </p>
+        </section>
+
+        <section class="game-instructions">
+            <h3>How to Play</h3>
+
+            <ul>
+                <li>You will receive five different computer repair challenges.</li>
+                <li>Read the problem description and examine the symptoms.</li>
+                <li>Select the best solution from the available choices.</li>
+                <li>Correct answers earn 100 points.</li>
+                <li>Incorrect answers lose 25 points.</li>
+                <li>Complete all five challenges to see your final results.</li>
+            </ul>
+        </section>
+
+        <section class="game-workstation">
+
+            <div class="workstation-header">
+                <h2>TECHNICIAN WORKSTATION</h2>
+
+                <div class="game-stats">
+                    <div class="stat-box">
+                        <span>ROUND</span>
+                        <strong id="roundDisplay">0 / 5</strong>
+                    </div>
+
+                    <div class="stat-box">
+                        <span>SCORE</span>
+                        <strong id="scoreDisplay">0</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="computer-status">
+                <h3>COMPUTER STATUS</h3>
+                <p id="statusMessage">System awaiting technician...</p>
+            </div>
+
+            <div id="startScreen" class="game-screen">
+                <h3>Ready for Your First Repair?</h3>
+
+                <p>
+                    A customer has brought in a computer that needs your help.
+                    Start the diagnostic process to begin your first challenge.
+                </p>
+
+                <button id="startButton" type="button">
+                    Start Game
+                </button>
+            </div>
+
+            <div id="questionScreen" class="game-screen" hidden>
+
+                <h3 id="problemTitle">Computer Problem</h3>
+
+                <p id="problemDescription"></p>
+
+                <div class="symptoms-box">
+                    <h4>Reported Symptoms</h4>
+                    <p id="problemSymptoms"></p>
+                </div>
+
+                <h4>Select the Best Repair Solution:</h4>
+
+                <div id="answerChoices" class="answer-choices">
+                    <!-- JavaScript will generate answer buttons here. -->
+                </div>
+
+                <div id="feedbackMessage" role="status" aria-live="polite"></div>
+
+                <button id="nextButton" type="button" hidden>
+                    Next Challenge
+                </button>
+
+            </div>
+
+            <div id="resultsScreen" class="game-screen" hidden>
+
+                <h3>Repair Session Complete!</h3>
+
+                <p id="finalMessage"></p>
+
+                <div class="final-results">
+                    <div>
+                        <span>FINAL SCORE</span>
+                        <strong id="finalScore">0</strong>
+                    </div>
+
+                    <div>
+                        <span>SUCCESSFUL REPAIRS</span>
+                        <strong id="correctAnswers">0 / 5</strong>
+                    </div>
+
+                    <div>
+                        <span>ACCURACY</span>
+                        <strong id="accuracyDisplay">0%</strong>
+                    </div>
+                </div>
+
+                <button id="restartButton" type="button">
+                    Play Again
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Created by Anthony Pilla</p>
+    </footer>
+
+</body>
+</html>
