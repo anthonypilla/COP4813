@@ -74,10 +74,31 @@
                 </div>
             </div>
 
-            <div class="computer-status">
-                <h3>COMPUTER STATUS</h3>
-                <p id="statusMessage">System awaiting technician...</p>
-            </div>
+            
+                <div class="computer-status">
+                    <h3>COMPUTER STATUS</h3>
+                    <p id="statusMessage">System awaiting technician...</p>
+                
+                    <div class="health-section">
+                        <div class="health-heading">
+                            <h4>COMPUTER HEALTH</h4>
+                            <strong id="healthDisplay">100%</strong>
+                        </div>
+                
+                        <div
+                            class="health-bar"
+                            role="progressbar"
+                            aria-label="Computer health"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="100"
+                            id="healthProgress"
+                        >
+                            <div id="healthFill" class="health-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
 
             <div id="startScreen" class="game-screen">
                 <h3>Ready for Your First Repair?</h3>
