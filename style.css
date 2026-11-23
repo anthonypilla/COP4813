@@ -1451,3 +1451,369 @@ footer p {
         padding: 10px;
     }
 }
+
+
+/* ==============================
+   Assignment 13 - Computer Crisis
+   ============================== */
+
+.computer-crisis {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Introduction and instructions */
+
+.game-intro,
+.game-instructions {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.game-intro h2,
+.game-instructions h3 {
+    color: #2496FF;
+    margin-top: 0;
+}
+
+.game-intro h3 {
+    color: #1b3b5a;
+    font-size: 1.5rem;
+}
+
+.game-intro p,
+.game-instructions li {
+    line-height: 1.7;
+}
+
+.game-instructions ul {
+    padding-left: 25px;
+}
+
+/* Main diagnostic workstation */
+
+.game-workstation {
+    background-color: #0b1a3b;
+    color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+}
+
+/* Workstation header */
+
+.workstation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 2px solid #2496FF;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.workstation-header h2 {
+    color: #57b5ff;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.game-stats {
+    display: flex;
+    gap: 12px;
+}
+
+.stat-box {
+    background-color: #142c55;
+    border: 1px solid #2496FF;
+    border-radius: 8px;
+    padding: 10px 18px;
+    min-width: 85px;
+    text-align: center;
+}
+
+.stat-box span {
+    display: block;
+    color: #a9c8e8;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.stat-box strong {
+    color: #ffffff;
+    font-size: 1.3rem;
+}
+
+/* Computer status display */
+
+.computer-status {
+    background-color: #142c55;
+    border-left: 5px solid #2496FF;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.computer-status h3 {
+    color: #57b5ff;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    margin: 0 0 8px;
+}
+
+.computer-status p {
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Game screens */
+
+.game-screen {
+    background-color: #142c55;
+    border: 1px solid #294d7e;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.game-screen h3 {
+    color: #57b5ff;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.game-screen h4 {
+    color: #ffffff;
+    margin-top: 25px;
+}
+
+.game-screen p {
+    color: #e0eaf5;
+    line-height: 1.7;
+}
+
+/* Start screen */
+
+#startScreen {
+    text-align: center;
+    padding: 50px 30px;
+}
+
+#startScreen h3 {
+    font-size: 1.8rem;
+}
+
+#startScreen p {
+    max-width: 650px;
+    margin: 15px auto 25px;
+}
+
+/* Problem symptoms */
+
+.symptoms-box {
+    background-color: #0b1a3b;
+    border-left: 4px solid #f0ad4e;
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin: 20px 0;
+}
+
+.symptoms-box h4 {
+    color: #f0ad4e;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.symptoms-box p {
+    margin-bottom: 0;
+}
+
+/* Answer choices */
+
+.answer-choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.answer-button {
+    background-color: #203f6b;
+    color: #ffffff;
+    border: 2px solid #3d6596;
+    border-radius: 7px;
+    padding: 18px;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.answer-button:hover:not(:disabled) {
+    background-color: #28558c;
+    border-color: #57b5ff;
+}
+
+.answer-button:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.answer-button:disabled {
+    cursor: default;
+    opacity: 0.9;
+}
+
+/* Correct and incorrect answer indicators */
+
+.answer-button.correct-answer {
+    background-color: #176b45;
+    border-color: #35d18a;
+}
+
+.answer-button.incorrect-answer {
+    background-color: #8b2934;
+    border-color: #ff6474;
+}
+
+/* Feedback messages */
+
+#feedbackMessage {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+#feedbackMessage:empty {
+    display: none;
+}
+
+#feedbackMessage.correct-feedback {
+    background-color: #174d38;
+    border: 1px solid #35d18a;
+    color: #a9f5cf;
+}
+
+#feedbackMessage.incorrect-feedback {
+    background-color: #63242d;
+    border: 1px solid #ff6474;
+    color: #ffc2c8;
+}
+
+/* Game buttons */
+
+.game-screen button:not(.answer-button) {
+    background-color: #2496FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 13px 25px;
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.game-screen button:not(.answer-button):hover {
+    background-color: #0879d1;
+}
+
+/* Final results */
+
+#resultsScreen {
+    text-align: center;
+}
+
+#resultsScreen h3 {
+    font-size: 1.8rem;
+}
+
+.final-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.final-results div {
+    background-color: #0b1a3b;
+    border: 1px solid #2496FF;
+    border-radius: 8px;
+    padding: 20px 10px;
+}
+
+.final-results span {
+    display: block;
+    color: #a9c8e8;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.final-results strong {
+    color: #57b5ff;
+    font-size: 1.8rem;
+}
+
+/* Mobile layout */
+
+@media screen and (max-width: 700px) {
+
+    .computer-crisis {
+        padding: 0 12px;
+        margin: 20px auto;
+    }
+
+    .game-intro,
+    .game-instructions {
+        padding: 18px;
+    }
+
+    .game-workstation {
+        padding: 15px;
+    }
+
+    .workstation-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .game-stats {
+        width: 100%;
+    }
+
+    .stat-box {
+        flex: 1;
+    }
+
+    .game-screen {
+        padding: 20px 15px;
+    }
+
+    .answer-choices {
+        grid-template-columns: 1fr;
+    }
+
+    .final-results {
+        grid-template-columns: 1fr;
+    }
+
+    .workstation-header h2 {
+        font-size: 1.15rem;
+    }
+
+    #startScreen {
+        padding: 30px 15px;
+    }
+}
+
