@@ -1817,3 +1817,58 @@ footer p {
     }
 }
 
+
+/* Computer Health Meter */
+
+.health-section {
+    margin-top: 18px;
+}
+
+.health-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.health-heading h4 {
+    color: #a9c8e8;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.health-heading strong {
+    color: #35d18a;
+    font-size: 1.1rem;
+}
+
+.health-bar {
+    height: 16px;
+    width: 100%;
+    background-color: #081226;
+    border: 1px solid #3d6596;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.health-fill {
+    height: 100%;
+    width: 100%;
+    background-color: #35d18a;
+    border-radius: 20px;
+    transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.health-fill.warning-health {
+    background-color: #f0ad4e;
+}
+
+.health-fill.critical-health {
+    background-color: #ff4757;
+}
+
+#healthDisplay {
+    transition: color 0.3s ease;
+}
+
